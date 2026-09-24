@@ -1,0 +1,23 @@
+# Auto-generated from manifest.yaml — do not edit by hand.
+# Wave 6: D=100k anchor — Spot pow2 (+256)
+# Paper: §9.1 — test N*(D) at largest D
+name: final_w6_d100k_pow2_spot_low
+mode: compute_only
+smiles_complexity: low
+descriptor_method: default
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 3
+dataset_dir: datasets/samples
+dataset_sizes:
+- 100000
+node_configs:
+- 2
+- 4
+- 8
+- 16
+- 32
+- 64
+- 128
+- 256

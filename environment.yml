@@ -1,0 +1,13 @@
+# Conda env for local + Docker-parity RDKit. Create with:
+#   conda env create -f environment.yml
+#   conda activate venv_chemoinformatics
+name: venv_chemoinformatics
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - rdkit
+  - pip
+  - pip:
+      - -r requirements.txt
+      - -r requirements-analysis.txt

@@ -1,0 +1,21 @@
+# Residual final-campaign config (auto)
+# wave=3 closes paper limitations gap
+name: residual_w3_d50k_pow2_spot_low
+mode: compute_only
+smiles_complexity: low
+descriptor_method: default
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 3
+dataset_dir: datasets/samples
+dataset_sizes:
+- 50000
+node_configs:
+- 2
+- 4
+- 8
+- 16
+- 32
+- 64
+- 128

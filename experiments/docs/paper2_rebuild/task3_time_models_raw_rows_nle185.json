@@ -1,0 +1,420 @@
+{
+  "generated_at": "2026-09-17T00:03:27.566837+00:00",
+  "diagnosis": {
+    "prior_task3_fit_unit": "per-cell medians",
+    "prior_n_cells": {
+      "low": 42,
+      "medium": 42
+    },
+    "evidence": "scripts/paper2_tasks3_5_n185.py pool_cells() appends np.median(vals); task3 JSON reports n_cells=42",
+    "hypothesis_confirmed": true
+  },
+  "refit_unit": "raw replicate rows in cells with >=3 reps, N<=185, full_pipeline",
+  "tiers": {
+    "low": {
+      "prior_median_fit": {
+        "winner": "a+b(D/N)+cN",
+        "n_cells": 42,
+        "r2_in_sample": 0.25601003698675584,
+        "r2_loocv": 0.15958073332627032,
+        "aic": 395.0084363299689
+      },
+      "raw_row_fit": {
+        "n_rows": 135,
+        "n_cells": 42,
+        "models": {
+          "quadratic": {
+            "coeffs": {
+              "a": 126.47915134899691,
+              "b": 2.0673685627510987,
+              "c": 0.0002695709230525723,
+              "d": -0.004530408700687907,
+              "e": -8.095129918213645e-06
+            },
+            "r2_in_sample": 0.10890740714572711,
+            "r2_loocv_row": 0.04225018683663995,
+            "loocv_rmse_row": 146.51771217256,
+            "r2_loocv_cell": 0.023968080701439187,
+            "loocv_rmse_cell": 147.9095109297905,
+            "aic": 1346.7908440569415,
+            "n_params": 5,
+            "curvature_d_positive": false
+          },
+          "a+b(D/N)+c*sqrt(N)": {
+            "coeffs": {
+              "a": 128.93997006450533,
+              "b_D_over_N": -0.02774686874925253,
+              "c_sqrtN": 14.925240149846378
+            },
+            "r2_in_sample": 0.1059027468396686,
+            "r2_loocv_row": 0.07161384783466151,
+            "loocv_rmse_row": 144.2541837366279,
+            "r2_loocv_cell": 0.06519935566921597,
+            "loocv_rmse_cell": 144.75167311912793,
+            "aic": 1343.2452825865485,
+            "n_params": 3,
+            "curvature_d_positive": null
+          },
+          "a+b(D/N)+cN": {
+            "coeffs": {
+              "a": 200.72910565770258,
+              "b_D_over_N": -0.03546036797891307,
+              "c_N": 0.7476840209551534
+            },
+            "r2_in_sample": 0.10442039720676699,
+            "r2_loocv_row": 0.069757880290508,
+            "loocv_rmse_row": 144.39830340523798,
+            "r2_loocv_cell": 0.062107090150423816,
+            "loocv_rmse_cell": 144.99089046128645,
+            "aic": 1343.4689176473014,
+            "n_params": 3,
+            "curvature_d_positive": null
+          },
+          "a+b(D/N)+c*log(N)": {
+            "coeffs": {
+              "a": -22.24121485806023,
+              "b_D_over_N": -0.02286897536485122,
+              "c_logN": 66.02340374105702
+            },
+            "r2_in_sample": 0.10430765241569284,
+            "r2_loocv_row": 0.07011112195068347,
+            "loocv_rmse_row": 144.3708845545213,
+            "r2_loocv_cell": 0.06498725777442771,
+            "loocv_rmse_cell": 144.76809361693356,
+            "aic": 1343.4859117690617,
+            "n_params": 3,
+            "curvature_d_positive": null
+          },
+          "a+b(D/N)+cN+dN^2": {
+            "coeffs": {
+              "a": 167.80534095337194,
+              "b_D_over_N": -0.026382739325796722,
+              "c_N": 1.4297507310328474,
+              "d_N2": -0.0030674028035690905
+            },
+            "r2_in_sample": 0.10655280092439512,
+            "r2_loocv_row": 0.05830819382455421,
+            "loocv_rmse_row": 145.28423351167103,
+            "r2_loocv_cell": 0.04801806157601274,
+            "loocv_rmse_cell": 146.07585773200515,
+            "aic": 1345.1470950363625,
+            "n_params": 4,
+            "curvature_d_positive": null
+          }
+        },
+        "winner_by_cell_loocv": "a+b(D/N)+c*sqrt(N)",
+        "winner_detail": {
+          "coeffs": {
+            "a": 128.93997006450533,
+            "b_D_over_N": -0.02774686874925253,
+            "c_sqrtN": 14.925240149846378
+          },
+          "r2_in_sample": 0.1059027468396686,
+          "r2_loocv_row": 0.07161384783466151,
+          "loocv_rmse_row": 144.2541837366279,
+          "r2_loocv_cell": 0.06519935566921597,
+          "loocv_rmse_cell": 144.75167311912793,
+          "aic": 1343.2452825865485,
+          "n_params": 3,
+          "curvature_d_positive": null
+        },
+        "ranking_by_cell_loocv": [
+          "a+b(D/N)+c*sqrt(N)",
+          "a+b(D/N)+c*log(N)",
+          "a+b(D/N)+cN",
+          "a+b(D/N)+cN+dN^2",
+          "quadratic"
+        ],
+        "ranking_by_row_loocv": [
+          "a+b(D/N)+c*sqrt(N)",
+          "a+b(D/N)+c*log(N)",
+          "a+b(D/N)+cN",
+          "a+b(D/N)+cN+dN^2",
+          "quadratic"
+        ]
+      },
+      "empirical_argmin_on_cell_medians": {
+        "5000": {
+          "N_emp_min": 50,
+          "T_median": 123.491
+        },
+        "10000": {
+          "N_emp_min": 75,
+          "T_median": 84.547
+        },
+        "20000": {
+          "N_emp_min": 75,
+          "T_median": 93.785
+        },
+        "30000": {
+          "N_emp_min": 25,
+          "T_median": 111.231
+        },
+        "40000": {
+          "N_emp_min": 25,
+          "T_median": 137.406
+        },
+        "50000": {
+          "N_emp_min": 25,
+          "T_median": 105.781
+        }
+      },
+      "predicted_Nstar_boundary": {
+        "5000": {
+          "N_star_pred": 25,
+          "T_pred_at_Nstar": 198.0167970638867,
+          "T_pred_N25": 198.0167970638867,
+          "T_pred_N185": 331.1952684268336,
+          "boundary_min_is_N25": true
+        },
+        "10000": {
+          "N_star_pred": 25,
+          "T_pred_at_Nstar": 192.4674233140362,
+          "T_pred_N25": 192.4674233140362,
+          "T_pred_N185": 330.4453530552322,
+          "boundary_min_is_N25": true
+        },
+        "20000": {
+          "N_star_pred": 25,
+          "T_pred_at_Nstar": 181.36867581433518,
+          "T_pred_N25": 181.36867581433518,
+          "T_pred_N185": 328.9455223120293,
+          "boundary_min_is_N25": true
+        },
+        "30000": {
+          "N_star_pred": 25,
+          "T_pred_at_Nstar": 170.26992831463417,
+          "T_pred_N25": 170.26992831463417,
+          "T_pred_N185": 327.4456915688265,
+          "boundary_min_is_N25": true
+        },
+        "40000": {
+          "N_star_pred": 25,
+          "T_pred_at_Nstar": 159.17118081493317,
+          "T_pred_N25": 159.17118081493317,
+          "T_pred_N185": 325.94586082562364,
+          "boundary_min_is_N25": true
+        },
+        "50000": {
+          "N_star_pred": 25,
+          "T_pred_at_Nstar": 148.07243331523216,
+          "T_pred_N25": 148.07243331523216,
+          "T_pred_N185": 324.4460300824208,
+          "boundary_min_is_N25": true
+        }
+      },
+      "reversal_flag": {
+        "N_at_D5000": 50,
+        "N_at_D50000": 25,
+        "delta": -25,
+        "reversal_persists": true
+      }
+    },
+    "medium": {
+      "prior_median_fit": {
+        "winner": "a+b(D/N)+cN",
+        "n_cells": 42,
+        "r2_in_sample": 0.10117342550789499,
+        "r2_loocv": -0.04501556959890474,
+        "aic": 399.01049700793146
+      },
+      "raw_row_fit": {
+        "n_rows": 130,
+        "n_cells": 42,
+        "models": {
+          "quadratic": {
+            "coeffs": {
+              "a": 275.0262299308805,
+              "b": -0.5381420853161796,
+              "c": -0.0016612491144754001,
+              "d": 0.0044745522191895915,
+              "e": 1.694652644825128e-05
+            },
+            "r2_in_sample": 0.09172737470574699,
+            "r2_loocv_row": 0.011974394247826758,
+            "loocv_rmse_row": 152.62224464613502,
+            "r2_loocv_cell": -0.02807013585168705,
+            "loocv_rmse_cell": 155.68440397911644,
+            "aic": 1306.3298043585096,
+            "n_params": 5,
+            "curvature_d_positive": true
+          },
+          "a+b(D/N)+c*sqrt(N)": {
+            "coeffs": {
+              "a": 146.7658813151678,
+              "b_D_over_N": -0.00762318426870584,
+              "c_sqrtN": 14.060874988865782
+            },
+            "r2_in_sample": 0.07050270170213102,
+            "r2_loocv_row": 0.027716966931082943,
+            "loocv_rmse_row": 151.4014693842179,
+            "r2_loocv_cell": 0.006546631251777124,
+            "loocv_rmse_cell": 153.04088904758368,
+            "aic": 1305.3327158130724,
+            "n_params": 3,
+            "curvature_d_positive": null
+          },
+          "a+b(D/N)+cN": {
+            "coeffs": {
+              "a": 203.76858086348275,
+              "b_D_over_N": -0.009119560106630509,
+              "c_N": 0.7868697845122101
+            },
+            "r2_in_sample": 0.07853510286266585,
+            "r2_loocv_row": 0.03615783323936994,
+            "loocv_rmse_row": 150.742841560633,
+            "r2_loocv_cell": 0.0192476823285207,
+            "loocv_rmse_cell": 152.0594474777694,
+            "aic": 1304.204417560007,
+            "n_params": 3,
+            "curvature_d_positive": null
+          },
+          "a+b(D/N)+c*log(N)": {
+            "coeffs": {
+              "a": 45.38162544659444,
+              "b_D_over_N": -0.011307070195572755,
+              "c_logN": 53.7005018341259
+            },
+            "r2_in_sample": 0.05949098444883649,
+            "r2_loocv_row": 0.016003874241464544,
+            "loocv_rmse_row": 152.3107058617563,
+            "r2_loocv_cell": -0.011482870544752721,
+            "loocv_rmse_cell": 154.42336177345524,
+            "aic": 1306.863769242121,
+            "n_params": 3,
+            "curvature_d_positive": null
+          },
+          "a+b(D/N)+cN+dN^2": {
+            "coeffs": {
+              "a": 267.91925410902724,
+              "b_D_over_N": -0.02721950437910436,
+              "c_N": -0.5466044186956271,
+              "d_N2": 0.005995139924302998
+            },
+            "r2_in_sample": 0.08633981564295501,
+            "r2_loocv_row": 0.02719494526278554,
+            "loocv_rmse_row": 151.44210788107443,
+            "r2_loocv_cell": -0.0018877334986175942,
+            "loocv_rmse_cell": 153.6891703751677,
+            "aic": 1305.0986414044085,
+            "n_params": 4,
+            "curvature_d_positive": null
+          }
+        },
+        "winner_by_cell_loocv": "a+b(D/N)+cN",
+        "winner_detail": {
+          "coeffs": {
+            "a": 203.76858086348275,
+            "b_D_over_N": -0.009119560106630509,
+            "c_N": 0.7868697845122101
+          },
+          "r2_in_sample": 0.07853510286266585,
+          "r2_loocv_row": 0.03615783323936994,
+          "loocv_rmse_row": 150.742841560633,
+          "r2_loocv_cell": 0.0192476823285207,
+          "loocv_rmse_cell": 152.0594474777694,
+          "aic": 1304.204417560007,
+          "n_params": 3,
+          "curvature_d_positive": null
+        },
+        "ranking_by_cell_loocv": [
+          "a+b(D/N)+cN",
+          "a+b(D/N)+c*sqrt(N)",
+          "a+b(D/N)+cN+dN^2",
+          "a+b(D/N)+c*log(N)",
+          "quadratic"
+        ],
+        "ranking_by_row_loocv": [
+          "a+b(D/N)+cN",
+          "a+b(D/N)+c*sqrt(N)",
+          "a+b(D/N)+cN+dN^2",
+          "a+b(D/N)+c*log(N)",
+          "quadratic"
+        ]
+      },
+      "empirical_argmin_on_cell_medians": {
+        "5000": {
+          "N_emp_min": 75,
+          "T_median": 98.234
+        },
+        "10000": {
+          "N_emp_min": 25,
+          "T_median": 139.681
+        },
+        "20000": {
+          "N_emp_min": 100,
+          "T_median": 194.528
+        },
+        "30000": {
+          "N_emp_min": 75,
+          "T_median": 160.907
+        },
+        "40000": {
+          "N_emp_min": 25,
+          "T_median": 142.603
+        },
+        "50000": {
+          "N_emp_min": 50,
+          "T_median": 84.576
+        }
+      },
+      "predicted_Nstar_boundary": {
+        "5000": {
+          "N_star_pred": 25,
+          "T_pred_at_Nstar": 221.6164134549619,
+          "T_pred_N25": 221.6164134549619,
+          "T_pred_N185": 349.0930164007651,
+          "boundary_min_is_N25": true
+        },
+        "10000": {
+          "N_star_pred": 25,
+          "T_pred_at_Nstar": 219.79250143363578,
+          "T_pred_N25": 219.79250143363578,
+          "T_pred_N185": 348.8465418032886,
+          "boundary_min_is_N25": true
+        },
+        "20000": {
+          "N_star_pred": 25,
+          "T_pred_at_Nstar": 216.1446773909836,
+          "T_pred_N25": 216.1446773909836,
+          "T_pred_N185": 348.3535926083356,
+          "boundary_min_is_N25": true
+        },
+        "30000": {
+          "N_star_pred": 25,
+          "T_pred_at_Nstar": 212.4968533483314,
+          "T_pred_N25": 212.4968533483314,
+          "T_pred_N185": 347.8606434133826,
+          "boundary_min_is_N25": true
+        },
+        "40000": {
+          "N_star_pred": 25,
+          "T_pred_at_Nstar": 208.84902930567918,
+          "T_pred_N25": 208.84902930567918,
+          "T_pred_N185": 347.3676942184296,
+          "boundary_min_is_N25": true
+        },
+        "50000": {
+          "N_star_pred": 25,
+          "T_pred_at_Nstar": 205.20120526302696,
+          "T_pred_N25": 205.20120526302696,
+          "T_pred_N185": 346.87474502347663,
+          "boundary_min_is_N25": true
+        }
+      },
+      "reversal_flag": {
+        "N_at_D5000": 75,
+        "N_at_D50000": 50,
+        "delta": -25,
+        "reversal_persists": true
+      }
+    }
+  },
+  "manuscript_recommendation": {
+    "do_not_quote_Nstar_from_parametric_fit": true,
+    "preferred_framing": "no interior time-minimizing configuration in tested N=25..185; smallest tested N at/near optimal; scheduling overhead dominates",
+    "use_task4_cost_model": true,
+    "use_task1_od_spot_ratio_3_20": true,
+    "note": "If cell-LOOCV R\u00b2 stays near zero/negative after raw-row refit, put negative/weak LOOCV in Limitations; do not publish N* table from the fit."
+  }
+}

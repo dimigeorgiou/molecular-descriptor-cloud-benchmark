@@ -1,0 +1,18 @@
+# Auto-generated from manifest.yaml — do not edit by hand.
+# Wave 8: Intermediate N near vertex — D=20k/40k
+# Paper: §9.3 — pow2 under-resolves vertex
+name: final_w8_d20k_midn_spot_low
+mode: compute_only
+smiles_complexity: low
+descriptor_method: default
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 3
+dataset_dir: datasets/samples
+dataset_sizes:
+- 20000
+node_configs:
+- 12
+- 20
+- 24

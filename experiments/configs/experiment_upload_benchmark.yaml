@@ -1,0 +1,22 @@
+name: experiment_upload_benchmark
+
+mode: upload_only
+
+dataset_sizes:
+  - 5000
+  - 10000
+  - 20000
+  - 50000
+
+smiles_complexity: medium
+descriptor_method: default
+
+node_configs: []
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 3
+
+description: "Measure S3 upload time vs dataset size, no computation"
+

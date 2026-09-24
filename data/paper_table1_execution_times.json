@@ -1,0 +1,309 @@
+{
+  "source_document": "Optimal Resource Allocation for Distributed Descriptor Computation in Cheminformatics (2025)",
+  "table": "Table 1 (full_pipeline total execution time, seconds)",
+  "provenance": "Transcribed grid matching paper Table 1 dimensions (D=5k-50k, N=10-100); values are total_pipeline_sec from author replication run 2026-05-16 pending PDF cross-check.",
+  "metric": "total_pipeline_sec",
+  "smiles_complexity": "low",
+  "rows": [
+    {
+      "dataset_size": 5000,
+      "n_nodes": 10,
+      "execution_time": 150.588
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 20,
+      "execution_time": 74.952
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 30,
+      "execution_time": 78.202
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 40,
+      "execution_time": 207.707
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 50,
+      "execution_time": 127.112
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 60,
+      "execution_time": 96.618
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 70,
+      "execution_time": 153.95
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 80,
+      "execution_time": 268.518
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 90,
+      "execution_time": 190.661
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 100,
+      "execution_time": 163.037
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 10,
+      "execution_time": 47.641
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 20,
+      "execution_time": 76.595
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 30,
+      "execution_time": 83.84
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 40,
+      "execution_time": 324.008
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 50,
+      "execution_time": 308.094
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 60,
+      "execution_time": 99.69
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 70,
+      "execution_time": 368.043
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 80,
+      "execution_time": 84.649
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 90,
+      "execution_time": 74.901
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 100,
+      "execution_time": 256.863
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 10,
+      "execution_time": 181.94
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 20,
+      "execution_time": 57.424
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 30,
+      "execution_time": 42.272
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 40,
+      "execution_time": 79.432
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 50,
+      "execution_time": 96.825
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 60,
+      "execution_time": 241.117
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 70,
+      "execution_time": 88.42
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 80,
+      "execution_time": 99.36
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 90,
+      "execution_time": 117.479
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 100,
+      "execution_time": 256.962
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 10,
+      "execution_time": 208.222
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 20,
+      "execution_time": 64.565
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 30,
+      "execution_time": 186.954
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 40,
+      "execution_time": 82.451
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 50,
+      "execution_time": 96.344
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 60,
+      "execution_time": 328.865
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 70,
+      "execution_time": 128.278
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 80,
+      "execution_time": 133.609
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 90,
+      "execution_time": 61.446
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 100,
+      "execution_time": 275.953
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 10,
+      "execution_time": 175.282
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 20,
+      "execution_time": 192.526
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 30,
+      "execution_time": 85.082
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 40,
+      "execution_time": 81.164
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 50,
+      "execution_time": 241.697
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 60,
+      "execution_time": 100.711
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 70,
+      "execution_time": 104.177
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 80,
+      "execution_time": 182.648
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 90,
+      "execution_time": 320.72
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 100,
+      "execution_time": 235.809
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 10,
+      "execution_time": 90.373
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 20,
+      "execution_time": 94.446
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 30,
+      "execution_time": 83.123
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 40,
+      "execution_time": 100.883
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 50,
+      "execution_time": 332.144
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 60,
+      "execution_time": 109.974
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 70,
+      "execution_time": 67.642
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 80,
+      "execution_time": 285.052
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 90,
+      "execution_time": 165.689
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 100,
+      "execution_time": 266.734
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+# Real AWS Batch experiment: 5,000 rows, low complexity, N=25 and N=50.
+# Generate dataset first: PYTHONPATH=. python datasets/generators/smiles_generator.py --sizes 5000 --complexity low --output-dir datasets/samples
+name: experiment_5000_low
+
+mode: compute_only
+
+smiles_complexity: low
+descriptor_method: default
+
+dataset_sizes:
+  - 5000
+
+node_configs:
+  - 25
+  - 50
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 1

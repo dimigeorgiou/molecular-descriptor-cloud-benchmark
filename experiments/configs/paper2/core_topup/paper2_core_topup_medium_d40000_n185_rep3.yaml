@@ -1,0 +1,13 @@
+name: paper2_core_topup_medium_d40000_n185_rep3
+mode: full_pipeline
+smiles_complexity: medium
+descriptor_method: default
+dataset_sizes:
+- 40000
+node_configs:
+- 185
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 1
+dataset_dir: datasets/samples

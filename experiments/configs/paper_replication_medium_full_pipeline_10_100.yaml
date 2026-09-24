@@ -1,0 +1,39 @@
+# Same grid as paper_replication_low_full_pipeline.yaml — SMILES complexity: medium (~57 char target).
+#
+# Prerequisite CSVs:
+#   PYTHONPATH=. python datasets/generators/smiles_generator.py \
+#     --sizes 5000 10000 20000 30000 40000 50000 --complexity medium --output-dir datasets/samples
+
+name: paper_replication_medium_full_pipeline_10_100
+
+mode: full_pipeline
+
+smiles_complexity: medium
+descriptor_method: default
+
+dataset_sizes:
+  - 5000
+  - 10000
+  - 20000
+  - 30000
+  - 40000
+  - 50000
+
+node_configs:
+  - 10
+  - 20
+  - 30
+  - 40
+  - 50
+  - 60
+  - 70
+  - 80
+  - 90
+  - 100
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 1
+
+dataset_dir: datasets/samples

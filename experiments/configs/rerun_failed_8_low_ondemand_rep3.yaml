@@ -1,0 +1,26 @@
+# On-Demand rerun: 4 shared failed (D,N) pairs for low complexity.
+# New experiment_id — does not upsert against Spot replication rows in Sheets.
+#
+# Run:
+#   PYTHONPATH=. python experiments/run_experiment.py \
+#     --config experiments/configs/rerun_failed_8_low_ondemand_rep3.yaml \
+#     --skip-pre-estimate
+
+name: paper_replication_low_ondemand_rep3_20260709
+
+mode: compute_only
+smiles_complexity: low
+descriptor_method: default
+
+grid_pairs:
+  - [5000, 150]
+  - [5000, 185]
+  - [10000, 185]
+  - [20000, 185]
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: false
+n_replicas: 3
+
+dataset_dir: datasets/samples

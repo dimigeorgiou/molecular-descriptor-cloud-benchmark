@@ -1,0 +1,15 @@
+# Interleaved D=20k/D=40k 2-rep cell (auto)
+# Alternate D cell-by-cell — do not batch by D.
+name: interleave_d20k_n64_medium_rep2
+mode: compute_only
+smiles_complexity: medium
+descriptor_method: default
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 2
+dataset_dir: datasets/samples
+dataset_sizes:
+- 20000
+node_configs:
+- 64

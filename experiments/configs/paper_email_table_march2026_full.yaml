@@ -1,0 +1,23 @@
+# Subset matching the March 2026 email pilot table (full_pipeline rows: D=10000, N=25,50,100).
+
+name: paper_email_table_march2026_full
+
+mode: full_pipeline
+
+smiles_complexity: low
+descriptor_method: default
+
+dataset_sizes:
+  - 10000
+
+node_configs:
+  - 25
+  - 50
+  - 100
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 1
+
+dataset_dir: datasets/samples

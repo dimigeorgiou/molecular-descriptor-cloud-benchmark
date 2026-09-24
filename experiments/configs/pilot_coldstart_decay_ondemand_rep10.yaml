@@ -1,0 +1,26 @@
+# Cold-start decay curve: 10 back-to-back N=25 replicas on On-Demand, minimal gaps.
+# Hypothesis: replica 1 ~180s cluster_init; replicas 2-10 ~20-50s (CE warm).
+#
+# Run (single session — do NOT pause between replicas):
+#   PYTHONPATH=. python experiments/run_experiment.py \
+#     --config experiments/configs/pilot_coldstart_decay_ondemand_rep10.yaml \
+#     --skip-pre-estimate --skip-verification
+#
+# Then:
+#   PYTHONPATH=. python scripts/analyze_coldstart_decay.py
+
+name: pilot_coldstart_decay_ondemand_rep10
+
+mode: compute_only
+smiles_complexity: low
+descriptor_method: default
+
+grid_pairs:
+  - [5000, 25]
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: false
+n_replicas: 10
+
+dataset_dir: datasets/samples

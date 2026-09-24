@@ -1,0 +1,42 @@
+# Smoke verification before full paper grids (2 configs = 2 array jobs).
+# Purpose: validate timing decomposition, Sheets append, and estimate vs actual.
+#
+# Estimator:
+#   PYTHONPATH=. python experiments/estimator/experiment_estimator.py \
+#     --config experiments/configs/smoke_batch_verify.yaml \
+#     --dataset-dir datasets/samples --verbose
+#
+# Local (no AWS):
+#   PYTHONPATH=. python experiments/run_experiment.py --local \
+#     --config experiments/configs/smoke_batch_verify.yaml \
+#     --dataset-dir datasets/samples
+#
+# Batch:
+#   PYTHONPATH=. python experiments/run_experiment.py \
+#     --config experiments/configs/smoke_batch_verify.yaml \
+#     --dataset-dir datasets/samples
+#
+# Then:
+#   PYTHONPATH=. python scripts/update_sheets_formulas.py
+#   PYTHONPATH=. python scripts/inspect_sheets.py --summary
+
+name: smoke_batch_verify
+
+mode: compute_only
+
+smiles_complexity: low
+descriptor_method: default
+
+dataset_sizes:
+  - 5000
+
+node_configs:
+  - 10
+  - 25
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 1
+
+dataset_dir: datasets/samples

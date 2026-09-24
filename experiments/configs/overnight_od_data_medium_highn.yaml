@@ -1,0 +1,25 @@
+# Resume — On-Demand 10-rep data for high-N cells only (N=150, 185).
+name: overnight_od_data_medium_highn
+
+mode: compute_only
+smiles_complexity: medium
+descriptor_method: default
+
+dataset_sizes:
+  - 5000
+  - 10000
+  - 20000
+  - 30000
+  - 40000
+  - 50000
+
+node_configs:
+  - 150
+  - 185
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: false
+n_replicas: 10
+
+dataset_dir: datasets/samples

@@ -1,0 +1,16 @@
+# Auto-generated from manifest.yaml — do not edit by hand.
+# Wave 1: N=128 gap — On-Demand after maxvCpus≥1024
+# Paper: §8.1 — three missing cells at D=5k/10k N=128
+name: final_w1_d10k_n128_od_medium
+mode: compute_only
+smiles_complexity: medium
+descriptor_method: default
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: false
+n_replicas: 3
+dataset_dir: datasets/samples
+dataset_sizes:
+- 10000
+node_configs:
+- 128

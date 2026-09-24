@@ -1,0 +1,20 @@
+name: experiment_00_quick
+
+mode: compute_only
+
+smiles_complexity: medium
+descriptor_method: default
+
+dataset_sizes:
+  - 5000
+  - 10000
+
+node_configs:
+  - 25
+  - 50
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 1
+

@@ -1,0 +1,38 @@
+# Same grid as paper_replication_low_compute_only.yaml — SMILES complexity: medium (~57 char target).
+#
+# Prerequisite CSVs:
+#   PYTHONPATH=. python datasets/generators/smiles_generator.py \
+#     --sizes 5000 10000 20000 30000 40000 50000 --complexity medium --output-dir datasets/samples
+#
+# Estimator → Run → verify (same flow as low; pair estimate/actual JSONs for *medium* configs only).
+
+name: paper_replication_medium_compute_only
+
+mode: compute_only
+
+smiles_complexity: medium
+descriptor_method: default
+
+dataset_sizes:
+  - 5000
+  - 10000
+  - 20000
+  - 30000
+  - 40000
+  - 50000
+
+node_configs:
+  - 25
+  - 50
+  - 75
+  - 100
+  - 125
+  - 150
+  - 185
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: false
+n_replicas: 3
+
+dataset_dir: datasets/samples

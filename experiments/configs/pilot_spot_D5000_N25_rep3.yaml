@@ -1,0 +1,21 @@
+# Spot vs On-Demand causality pilot — one cell, 3 replicas.
+# D=5000, N=25 (historically noise-dominated on Spot).
+# Run AFTER setting BATCH_QUEUE_SPOT and BATCH_QUEUE_ONDEMAND in .env.
+#
+#   PYTHONPATH=. python experiments/run_experiment.py --config experiments/configs/pilot_spot_D5000_N25_rep3.yaml --skip-pre-estimate
+
+name: pilot_spot_D5000_N25_rep3
+
+mode: compute_only
+smiles_complexity: low
+descriptor_method: default
+
+grid_pairs:
+  - [5000, 25]
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 3
+
+dataset_dir: datasets/samples

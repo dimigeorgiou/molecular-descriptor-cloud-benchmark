@@ -1,0 +1,8 @@
+# Optional analysis / plotting (paper panels, probe scripts under scripts/).
+# Install: pip install -r requirements-analysis.txt
+
+-r requirements.txt
+
+matplotlib>=3.8,<4.0
+scipy>=1.11,<2.0
+seaborn>=0.13,<1.0

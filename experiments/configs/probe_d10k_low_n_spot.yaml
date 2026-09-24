@@ -1,0 +1,22 @@
+# Small probe: D=10k × N=5,10,15,25 — low complexity, Spot (matches main grid).
+name: probe_d10k_low_n_spot
+
+mode: compute_only
+smiles_complexity: low
+descriptor_method: default
+
+dataset_sizes:
+  - 10000
+
+node_configs:
+  - 5
+  - 10
+  - 15
+  - 25
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 3
+
+dataset_dir: datasets/samples

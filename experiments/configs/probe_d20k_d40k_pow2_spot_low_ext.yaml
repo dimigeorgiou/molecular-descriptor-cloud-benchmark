@@ -1,0 +1,22 @@
+# Extend D=20k/40k pow2 sweep to N=64,128 — low complexity, 1 replica.
+# Complements probe_d20k_d40k_pow2_spot_low (N≤32) for fair global fit vs D=50k.
+name: probe_d20k_d40k_pow2_spot_low_ext
+
+mode: compute_only
+smiles_complexity: low
+descriptor_method: default
+
+dataset_sizes:
+  - 20000
+  - 40000
+
+node_configs:
+  - 64
+  - 128
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 1
+
+dataset_dir: datasets/samples

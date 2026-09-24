@@ -1,0 +1,22 @@
+# Auto-generated from manifest.yaml — do not edit by hand.
+# Wave 3: D=50k — full pow2 replicated grid (extend beyond D≤40k)
+# Paper: §8.2 — replicated grid only D≤40k
+name: final_w3_d50k_pow2_spot_low
+mode: compute_only
+smiles_complexity: low
+descriptor_method: default
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 3
+dataset_dir: datasets/samples
+dataset_sizes:
+- 50000
+node_configs:
+- 2
+- 4
+- 8
+- 16
+- 32
+- 64
+- 128

@@ -1,0 +1,23 @@
+# Core runtime (orchestrator, Batch client, Sheets, estimator).
+# Install: pip install -r requirements.txt
+#
+# RDKit is NOT on this list — install via conda-forge (required for workers / local compute):
+#   conda install -c conda-forge rdkit
+# Docker image installs RDKit the same way (see docker/Dockerfile).
+
+numpy>=1.24,<3.0
+pandas>=2.0,<4.0
+scikit-learn>=1.3,<2.0
+loguru>=0.7,<1.0
+PyYAML>=6.0,<7.0
+rich>=13.0,<15.0
+boto3>=1.28,<2.0
+gspread>=6.0,<7.0
+google-auth>=2.20,<3.0
+python-dotenv>=1.0,<2.0
+tenacity>=8.2,<10.0
+tqdm>=4.66,<5.0
+requests>=2.31,<3.0
+
+# Tests
+pytest>=7.0,<10.0

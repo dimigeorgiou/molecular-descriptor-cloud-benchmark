@@ -1,0 +1,23 @@
+# Auto-generated from manifest.yaml — do not edit by hand.
+# Wave 7: D=100k — On-Demand Spot parity check (2 reps)
+# Paper: §9 — OD vs Spot at largest D only
+name: final_w7_d100k_pow2_od_low
+mode: compute_only
+smiles_complexity: low
+descriptor_method: default
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: false
+n_replicas: 2
+dataset_dir: datasets/samples
+dataset_sizes:
+- 100000
+node_configs:
+- 2
+- 4
+- 8
+- 16
+- 32
+- 64
+- 128
+- 256

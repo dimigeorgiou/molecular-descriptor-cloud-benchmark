@@ -1,0 +1,24 @@
+# Micro-grid low-N — medium complexity, Spot.
+name: micro_grid_low_n_medium_spot
+
+mode: compute_only
+smiles_complexity: medium
+descriptor_method: default
+
+dataset_sizes:
+  - 5000
+  - 10000
+
+node_configs:
+  - 1
+  - 5
+  - 10
+  - 15
+  - 25
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 5
+
+dataset_dir: datasets/samples

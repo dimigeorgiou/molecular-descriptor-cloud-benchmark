@@ -1,0 +1,22 @@
+# Throwaway smoke: one node on On-Demand queue before Spot vs On-Demand pilot.
+#
+#   export BATCH_QUEUE_ONDEMAND=chemo-ec2-ondemand-queue
+#   PYTHONPATH=. python experiments/run_experiment.py \
+#     --config experiments/configs/smoke_ondemand_single_node.yaml \
+#     --skip-pre-estimate --skip-verification
+
+name: smoke_ondemand_single_node
+
+mode: compute_only
+smiles_complexity: low
+descriptor_method: default
+
+grid_pairs:
+  - [5000, 1]
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: false
+n_replicas: 1
+
+dataset_dir: datasets/samples

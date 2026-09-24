@@ -1,0 +1,15 @@
+# Residual final-campaign config (auto)
+# wave=1 closes paper limitations gap
+name: residual_w1_d5k_n128_od_medium_r1
+mode: compute_only
+smiles_complexity: medium
+descriptor_method: default
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: false
+n_replicas: 1
+dataset_dir: datasets/samples
+dataset_sizes:
+- 5000
+node_configs:
+- 128

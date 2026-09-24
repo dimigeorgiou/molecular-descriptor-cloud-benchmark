@@ -1,0 +1,22 @@
+# RESUME residual N only — original crash 2026-07-16 EndpointConnectionError
+# Complete already: see tmp/rep3_pow2_parallel/rep3_d5k_pow2_spot_medium.log
+name: rep3_d5k_pow2_spot_medium_resume
+
+mode: compute_only
+smiles_complexity: medium
+descriptor_method: default
+
+dataset_sizes:
+  - 5000
+
+node_configs:
+  - 32
+  - 64
+  - 128
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 3
+
+dataset_dir: datasets/samples

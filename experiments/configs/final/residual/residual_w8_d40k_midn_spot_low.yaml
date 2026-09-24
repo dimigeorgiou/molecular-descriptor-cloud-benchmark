@@ -1,0 +1,17 @@
+# Residual final-campaign config (auto)
+# wave=8 closes paper limitations gap
+name: residual_w8_d40k_midn_spot_low
+mode: compute_only
+smiles_complexity: low
+descriptor_method: default
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 3
+dataset_dir: datasets/samples
+dataset_sizes:
+- 40000
+node_configs:
+- 12
+- 20
+- 24

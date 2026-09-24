@@ -1,0 +1,19 @@
+name: experiment_100_low
+
+mode: compute_only
+
+smiles_complexity: low
+descriptor_method: default
+
+dataset_sizes:
+  - 100
+
+node_configs:
+  - 25
+  - 50
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 1
+

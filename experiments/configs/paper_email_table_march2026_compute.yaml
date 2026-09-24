@@ -1,0 +1,23 @@
+# Subset matching the March 2026 email pilot table (compute_only rows: D=5000, N=25,100).
+# Use to re-verify estimator loss on a small slate before the full paper grid.
+
+name: paper_email_table_march2026_compute
+
+mode: compute_only
+
+smiles_complexity: low
+descriptor_method: default
+
+dataset_sizes:
+  - 5000
+
+node_configs:
+  - 25
+  - 100
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 1
+
+dataset_dir: datasets/samples

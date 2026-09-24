@@ -1,0 +1,19 @@
+# 5-rep confirmation: D=20k Spot medium N=8 (scheduling spike outlier).
+name: confirm_d20k_n8_spot_medium
+
+mode: compute_only
+smiles_complexity: medium
+descriptor_method: default
+
+dataset_sizes:
+  - 20000
+
+node_configs:
+  - 8
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 5
+
+dataset_dir: datasets/samples

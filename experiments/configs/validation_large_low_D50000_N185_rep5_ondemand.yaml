@@ -1,0 +1,16 @@
+# Large-cell estimator validation — low, D=50k, N=185, 5 On-Demand replicas.
+name: validation_large_low_D50000_N185_rep5_ondemand
+
+mode: compute_only
+smiles_complexity: low
+descriptor_method: default
+
+grid_pairs:
+  - [50000, 185]
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: false
+n_replicas: 5
+
+dataset_dir: datasets/samples

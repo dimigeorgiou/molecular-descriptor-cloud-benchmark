@@ -1,0 +1,49 @@
+# Paper-aligned grid — mode: full_pipeline (cluster init, scheduling, S3, sync + compute).
+# Use this for Table 1–style total wall-clock replication and T(N,D) fitting on end-to-end times.
+#
+# Prerequisite CSVs: same as paper_replication_low_compute_only.yaml
+#
+# Estimator:
+#   PYTHONPATH=. python experiments/estimator/experiment_estimator.py \
+#     --config experiments/configs/paper_replication_low_full_pipeline.yaml \
+#     --dataset-dir datasets/samples --verbose
+#
+# Run:
+#   PYTHONPATH=. python experiments/run_experiment.py --config experiments/configs/paper_replication_low_full_pipeline.yaml
+#
+# Jobs: 6 × 7 = 42 Batch jobs per replica.
+
+name: paper_replication_low_full_pipeline_10_100
+
+mode: full_pipeline
+
+smiles_complexity: low
+descriptor_method: default
+
+
+dataset_sizes:
+  - 5000
+  - 10000
+  - 20000
+  - 30000
+  - 40000
+  - 50000
+
+node_configs:
+  - 10
+  - 20
+  - 30
+  - 40
+  - 50
+  - 60
+  - 70
+  - 80
+  - 90
+  - 100
+  
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 1
+
+dataset_dir: datasets/samples

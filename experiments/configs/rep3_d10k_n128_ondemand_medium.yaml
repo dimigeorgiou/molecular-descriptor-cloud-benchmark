@@ -1,0 +1,19 @@
+# Retry N=128 after Spot array failures (parent FAILED / 0 children started)
+name: rep3_d10k_n128_ondemand_medium
+
+mode: compute_only
+smiles_complexity: medium
+descriptor_method: default
+
+dataset_sizes:
+  - 10000
+
+node_configs:
+  - 128
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: false
+n_replicas: 3
+
+dataset_dir: datasets/samples

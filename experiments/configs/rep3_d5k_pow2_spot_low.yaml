@@ -1,0 +1,25 @@
+# D=5k pow2 Spot low, 3 reps — low-N boundary case
+name: rep3_d5k_pow2_spot_low
+
+mode: compute_only
+smiles_complexity: low
+descriptor_method: default
+
+dataset_sizes:
+  - 5000
+
+node_configs:
+  - 2
+  - 4
+  - 8
+  - 16
+  - 32
+  - 64
+  - 128
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 3
+
+dataset_dir: datasets/samples

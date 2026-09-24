@@ -1,0 +1,16 @@
+# Validation gate — low complexity, D=5000, N=25, 10 On-Demand replicas.
+name: validation_low_D5000_N25_rep10_ondemand
+
+mode: compute_only
+smiles_complexity: low
+descriptor_method: default
+
+grid_pairs:
+  - [5000, 25]
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: false
+n_replicas: 10
+
+dataset_dir: datasets/samples

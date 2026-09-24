@@ -1,0 +1,209 @@
+# Final campaign — maps paper §8 Limitations + §9 Future Work to experiment configs.
+# Regenerate YAMLs: python scripts/generate_final_campaign_configs.py
+
+pow2_nodes: &pow2 [2, 4, 8, 16, 32, 64, 128]
+mid_nodes: &midn [12, 20, 24]
+pow2_plus256: &pow2_256 [2, 4, 8, 16, 32, 64, 128, 256]
+
+defaults:
+  mode: compute_only
+  descriptor_method: default
+  vcpus_per_node: 4
+  gb_per_node: 8
+  dataset_dir: datasets/samples
+
+waves:
+  - id: 1
+    title: "N=128 gap — On-Demand after maxvCpus≥1024"
+    limitation: "§8.1 — three missing cells at D=5k/10k N=128"
+    parallel: true
+    configs:
+      - name: final_w1_d5k_n128_od_low
+        dataset_sizes: [5000]
+        node_configs: [128]
+        smiles_complexity: low
+        use_spot: false
+        n_replicas: 3
+      - name: final_w1_d5k_n128_od_medium
+        dataset_sizes: [5000]
+        node_configs: [128]
+        smiles_complexity: medium
+        use_spot: false
+        n_replicas: 3
+      - name: final_w1_d10k_n128_od_medium
+        dataset_sizes: [10000]
+        node_configs: [128]
+        smiles_complexity: medium
+        use_spot: false
+        n_replicas: 3
+
+  - id: 2
+    title: "D=10k low — full pow2 replicated grid"
+    limitation: "§8 — D=10k only medium in rep3"
+    parallel: false
+    configs:
+      - name: final_w2_d10k_pow2_spot_low
+        dataset_sizes: [10000]
+        node_configs: *pow2
+        smiles_complexity: low
+        use_spot: true
+        n_replicas: 3
+
+  - id: 3
+    title: "D=50k — full pow2 replicated grid (extend beyond D≤40k)"
+    limitation: "§8.2 — replicated grid only D≤40k"
+    parallel: true
+    configs:
+      - name: final_w3_d50k_pow2_spot_low
+        dataset_sizes: [50000]
+        node_configs: *pow2
+        smiles_complexity: low
+        use_spot: true
+        n_replicas: 3
+      - name: final_w3_d50k_pow2_spot_medium
+        dataset_sizes: [50000]
+        node_configs: *pow2
+        smiles_complexity: medium
+        use_spot: true
+        n_replicas: 3
+
+  - id: 4
+    title: "+2 reps at D=20k/40k — tighten R²"
+    limitation: "§8.4 — 3-rep minimum at D=20k/40k"
+    parallel: true
+    configs:
+      - name: final_w4_d20k_pow2_spot_low_rep2
+        dataset_sizes: [20000]
+        node_configs: *pow2
+        smiles_complexity: low
+        use_spot: true
+        n_replicas: 2
+      - name: final_w4_d20k_pow2_spot_medium_rep2
+        dataset_sizes: [20000]
+        node_configs: *pow2
+        smiles_complexity: medium
+        use_spot: true
+        n_replicas: 2
+      - name: final_w4_d40k_pow2_spot_low_rep2
+        dataset_sizes: [40000]
+        node_configs: *pow2
+        smiles_complexity: low
+        use_spot: true
+        n_replicas: 2
+      - name: final_w4_d40k_pow2_spot_medium_rep2
+        dataset_sizes: [40000]
+        node_configs: *pow2
+        smiles_complexity: medium
+        use_spot: true
+        n_replicas: 2
+
+  - id: 5
+    title: "High complexity tier — pow2 at D=5k/20k/40k"
+    limitation: "§8.3 / §9 — high tier never replicated"
+    prereq: datasets_high
+    parallel: true
+    configs:
+      - name: final_w5_d5k_pow2_spot_high
+        dataset_sizes: [5000]
+        node_configs: *pow2
+        smiles_complexity: high
+        use_spot: true
+        n_replicas: 3
+      - name: final_w5_d20k_pow2_spot_high
+        dataset_sizes: [20000]
+        node_configs: *pow2
+        smiles_complexity: high
+        use_spot: true
+        n_replicas: 3
+      - name: final_w5_d40k_pow2_spot_high
+        dataset_sizes: [40000]
+        node_configs: *pow2
+        smiles_complexity: high
+        use_spot: true
+        n_replicas: 3
+
+  - id: 6
+    title: "D=100k anchor — Spot pow2 (+256)"
+    limitation: "§9.1 — test N*(D) at largest D"
+    prereq: datasets_100k
+    parallel: true
+    configs:
+      - name: final_w6_d100k_pow2_spot_low
+        dataset_sizes: [100000]
+        node_configs: *pow2_256
+        smiles_complexity: low
+        use_spot: true
+        n_replicas: 3
+      - name: final_w6_d100k_pow2_spot_medium
+        dataset_sizes: [100000]
+        node_configs: *pow2_256
+        smiles_complexity: medium
+        use_spot: true
+        n_replicas: 3
+
+  - id: 7
+    title: "D=100k — On-Demand Spot parity check (2 reps)"
+    limitation: "§9 — OD vs Spot at largest D only"
+    prereq: datasets_100k
+    parallel: true
+    configs:
+      - name: final_w7_d100k_pow2_od_low
+        dataset_sizes: [100000]
+        node_configs: *pow2_256
+        smiles_complexity: low
+        use_spot: false
+        n_replicas: 2
+      - name: final_w7_d100k_pow2_od_medium
+        dataset_sizes: [100000]
+        node_configs: *pow2_256
+        smiles_complexity: medium
+        use_spot: false
+        n_replicas: 2
+
+  - id: 8
+    title: "Intermediate N near vertex — D=20k/40k"
+    limitation: "§9.3 — pow2 under-resolves vertex"
+    parallel: true
+    configs:
+      - name: final_w8_d20k_midn_spot_low
+        dataset_sizes: [20000]
+        node_configs: *midn
+        smiles_complexity: low
+        use_spot: true
+        n_replicas: 3
+      - name: final_w8_d20k_midn_spot_medium
+        dataset_sizes: [20000]
+        node_configs: *midn
+        smiles_complexity: medium
+        use_spot: true
+        n_replicas: 3
+      - name: final_w8_d40k_midn_spot_low
+        dataset_sizes: [40000]
+        node_configs: *midn
+        smiles_complexity: low
+        use_spot: true
+        n_replicas: 3
+      - name: final_w8_d40k_midn_spot_medium
+        dataset_sizes: [40000]
+        node_configs: *midn
+        smiles_complexity: medium
+        use_spot: true
+        n_replicas: 3
+
+  - id: 9
+    title: "Re-verify Spot failure boundary N≥150 at D=5k"
+    limitation: "§7 — post-infra-fix confirmation"
+    parallel: true
+    env:
+      BATCH_RETRY_ATTEMPTS: "4"
+    configs:
+      - name: final_w9_d5k_n150_185_spot_low
+        grid_pairs: [[5000, 150], [5000, 185]]
+        smiles_complexity: low
+        use_spot: true
+        n_replicas: 3
+      - name: final_w9_d5k_n150_185_spot_medium
+        grid_pairs: [[5000, 150], [5000, 185]]
+        smiles_complexity: medium
+        use_spot: true
+        n_replicas: 3

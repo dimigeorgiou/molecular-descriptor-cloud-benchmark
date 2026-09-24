@@ -1,0 +1,47 @@
+# Paper-aligned grid — mode: compute_only (isolates core descriptor scaling vs N).
+# Matches research paper Sec. 3–4: D ∈ [5k, 50k], N ∈ [25, 185].
+#
+# Prerequisite CSVs:
+#   PYTHONPATH=. python datasets/generators/smiles_generator.py \
+#     --sizes 5000 10000 20000 30000 40000 50000 --complexity low --output-dir datasets/samples
+#
+# Estimator (always first):
+#   PYTHONPATH=. python experiments/estimator/experiment_estimator.py \
+#     --config experiments/configs/paper_replication_low_compute_only.yaml \
+#     --dataset-dir datasets/samples --verbose
+#
+# Run (AWS Batch, EC2 queue recommended: chemo-ec2-queue):
+#   PYTHONPATH=. python experiments/run_experiment.py --config experiments/configs/paper_replication_low_compute_only.yaml
+#
+# Jobs: 6 dataset sizes × 7 node configs = 42 Batch jobs (× replicas if n_replicas > 1).
+
+name: paper_replication_low_compute_only
+
+mode: compute_only
+
+smiles_complexity: low
+descriptor_method: default
+
+dataset_sizes:
+  - 5000
+  - 10000
+  - 20000
+  - 30000
+  - 40000
+  - 50000
+
+node_configs:
+  - 25
+  - 50
+  - 75
+  - 100
+  - 125
+  - 150
+  - 185
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: false
+n_replicas: 3
+
+dataset_dir: datasets/samples

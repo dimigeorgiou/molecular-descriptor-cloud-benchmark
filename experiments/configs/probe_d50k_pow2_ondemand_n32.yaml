@@ -1,0 +1,19 @@
+# Resume: D=50k OD N=32 only.
+name: probe_d50k_pow2_ondemand
+
+mode: compute_only
+smiles_complexity: low
+descriptor_method: default
+
+dataset_sizes:
+  - 50000
+
+node_configs:
+  - 32
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: false
+n_replicas: 1
+
+dataset_dir: datasets/samples

@@ -1,0 +1,22 @@
+# RESUME2 — fill MISSING/PARTIAL after EndpointConnection crashes
+# Sheets shortfall vs 3 reps as of generation
+name: rep3_d20k_pow2_spot_low_resume2
+
+mode: compute_only
+smiles_complexity: low
+descriptor_method: default
+
+dataset_sizes:
+  - 20000
+
+node_configs:
+  - 32
+  - 64
+  - 128
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 3
+
+dataset_dir: datasets/samples

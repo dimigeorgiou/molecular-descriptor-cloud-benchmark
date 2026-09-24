@@ -1,0 +1,33 @@
+{
+  "chosen_form": "flexible_log_linear",
+  "form_description": "cost_usd = rate_usd_per_node_hour * N * (wall_sec/3600)",
+  "rates": {
+    "on_demand": {
+      "median_usd_per_node_hour": 0.00943419980349745,
+      "mean_usd_per_node_hour": 0.0237789111934989,
+      "std": 0.04006814860331487,
+      "n": 168
+    },
+    "spot": {
+      "median_usd_per_node_hour": 0.0024169541466691454,
+      "mean_usd_per_node_hour": 0.008847943098861458,
+      "std": 0.014814038889304723,
+      "n": 854
+    }
+  },
+  "fit_quality": {
+    "analytical_rmse_usd": 0.014126776632797905,
+    "flexible_rmse_usd": 0.0079247011896446,
+    "flexible_coeffs": {
+      "log_cost = a + b*log(N) + c*log(wall) + d*I_ondemand": {
+        "a": -8.060073081969026,
+        "b": 0.08273947341823551,
+        "c": 0.5073479412445833,
+        "d": 1.4489600646129208
+      }
+    },
+    "n_samples": 1022
+  },
+  "selection_note": "Prefer analytical closed form when residuals are comparable; flexible wins only if RMSE < 70% of analytical.",
+  "label": "modeled_from_compute_only_measured_costs"
+}

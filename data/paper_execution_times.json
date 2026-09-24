@@ -1,0 +1,1063 @@
+{
+  "source_document": "Optimal Resource Allocation for Distributed Descriptor Computation in Cheminformatics (2025)",
+  "pdf_path": "docs/Optimal Resource Allocation for Distributed Descriptor Computation in Cheminformatics.docx.pdf",
+  "pdf_page": 4,
+  "provenance": "paper_pdf_table_transcription",
+  "metric": "execution_time_sec",
+  "description": "End-to-end execution time including cluster formation, scheduling, distribution, communication, synchronization, and descriptor calculation (paper Table 1 & 2).",
+  "node_configs": [
+    25,
+    35,
+    45,
+    55,
+    65,
+    75,
+    85,
+    95,
+    105,
+    115,
+    125,
+    135,
+    145,
+    155,
+    165,
+    175,
+    185
+  ],
+  "table_1_dataset_sizes": [
+    5000,
+    10000,
+    15000,
+    20000,
+    25000
+  ],
+  "table_2_dataset_sizes": [
+    30000,
+    35000,
+    40000,
+    45000,
+    50000
+  ],
+  "rows": [
+    {
+      "dataset_size": 5000,
+      "n_nodes": 25,
+      "execution_time": 169.55,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 35,
+      "execution_time": 171.38,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 45,
+      "execution_time": 170.92,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 55,
+      "execution_time": 151.84,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 65,
+      "execution_time": 133.91,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 75,
+      "execution_time": 130.62,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 85,
+      "execution_time": 134.0,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 95,
+      "execution_time": 137.81,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 105,
+      "execution_time": 142.98,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 115,
+      "execution_time": 147.65,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 125,
+      "execution_time": 152.56,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 135,
+      "execution_time": 154.38,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 145,
+      "execution_time": 140.89,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 155,
+      "execution_time": 146.92,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 165,
+      "execution_time": 145.26,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 175,
+      "execution_time": 149.1,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 5000,
+      "n_nodes": 185,
+      "execution_time": 159.8,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 25,
+      "execution_time": 211.74,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 35,
+      "execution_time": 212.75,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 45,
+      "execution_time": 211.78,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 55,
+      "execution_time": 199.87,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 65,
+      "execution_time": 187.78,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 75,
+      "execution_time": 165.74,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 85,
+      "execution_time": 155.7,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 95,
+      "execution_time": 158.37,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 105,
+      "execution_time": 155.15,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 115,
+      "execution_time": 155.93,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 125,
+      "execution_time": 152.81,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 135,
+      "execution_time": 153.03,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 145,
+      "execution_time": 152.2,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 155,
+      "execution_time": 161.05,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 165,
+      "execution_time": 170.19,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 175,
+      "execution_time": 170.79,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 10000,
+      "n_nodes": 185,
+      "execution_time": 170.61,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 15000,
+      "n_nodes": 25,
+      "execution_time": 371.77,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 15000,
+      "n_nodes": 35,
+      "execution_time": 288.31,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 15000,
+      "n_nodes": 45,
+      "execution_time": 209.89,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 15000,
+      "n_nodes": 55,
+      "execution_time": 200.64,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 15000,
+      "n_nodes": 65,
+      "execution_time": 180.44,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 15000,
+      "n_nodes": 75,
+      "execution_time": 183.49,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 15000,
+      "n_nodes": 85,
+      "execution_time": 215.73,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 15000,
+      "n_nodes": 95,
+      "execution_time": 189.36,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 15000,
+      "n_nodes": 105,
+      "execution_time": 176.36,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 15000,
+      "n_nodes": 115,
+      "execution_time": 179.09,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 15000,
+      "n_nodes": 125,
+      "execution_time": 198.74,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 15000,
+      "n_nodes": 135,
+      "execution_time": 193.77,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 15000,
+      "n_nodes": 145,
+      "execution_time": 184.07,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 15000,
+      "n_nodes": 155,
+      "execution_time": 186.25,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 15000,
+      "n_nodes": 165,
+      "execution_time": 178.08,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 15000,
+      "n_nodes": 175,
+      "execution_time": 176.77,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 15000,
+      "n_nodes": 185,
+      "execution_time": 178.14,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 25,
+      "execution_time": 476.84,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 35,
+      "execution_time": 288.19,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 45,
+      "execution_time": 250.09,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 55,
+      "execution_time": 239.43,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 65,
+      "execution_time": 238.09,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 75,
+      "execution_time": 236.41,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 85,
+      "execution_time": 238.37,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 95,
+      "execution_time": 217.29,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 105,
+      "execution_time": 198.76,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 115,
+      "execution_time": 195.91,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 125,
+      "execution_time": 192.62,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 135,
+      "execution_time": 187.45,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 145,
+      "execution_time": 183.19,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 155,
+      "execution_time": 201.25,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 165,
+      "execution_time": 211.94,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 175,
+      "execution_time": 216.76,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 20000,
+      "n_nodes": 185,
+      "execution_time": 220.62,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 25000,
+      "n_nodes": 25,
+      "execution_time": 568.92,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 25000,
+      "n_nodes": 35,
+      "execution_time": 397.3,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 25000,
+      "n_nodes": 45,
+      "execution_time": 382.3,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 25000,
+      "n_nodes": 55,
+      "execution_time": 296.24,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 25000,
+      "n_nodes": 65,
+      "execution_time": 251.37,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 25000,
+      "n_nodes": 75,
+      "execution_time": 250.26,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 25000,
+      "n_nodes": 85,
+      "execution_time": 254.56,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 25000,
+      "n_nodes": 95,
+      "execution_time": 255.59,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 25000,
+      "n_nodes": 105,
+      "execution_time": 253.42,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 25000,
+      "n_nodes": 115,
+      "execution_time": 253.2,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 25000,
+      "n_nodes": 125,
+      "execution_time": 242.59,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 25000,
+      "n_nodes": 135,
+      "execution_time": 236.16,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 25000,
+      "n_nodes": 145,
+      "execution_time": 228.92,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 25000,
+      "n_nodes": 155,
+      "execution_time": 229.86,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 25000,
+      "n_nodes": 165,
+      "execution_time": 222.94,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 25000,
+      "n_nodes": 175,
+      "execution_time": 214.26,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 25000,
+      "n_nodes": 185,
+      "execution_time": 212.91,
+      "table": "table_1"
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 25,
+      "execution_time": 469.3,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 35,
+      "execution_time": 467.2,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 45,
+      "execution_time": 458.55,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 55,
+      "execution_time": 389.11,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 65,
+      "execution_time": 362.46,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 75,
+      "execution_time": 290.99,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 85,
+      "execution_time": 259.93,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 95,
+      "execution_time": 256.14,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 105,
+      "execution_time": 246.72,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 115,
+      "execution_time": 249.75,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 125,
+      "execution_time": 249.03,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 135,
+      "execution_time": 251.47,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 145,
+      "execution_time": 248.68,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 155,
+      "execution_time": 253.3,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 165,
+      "execution_time": 242.96,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 175,
+      "execution_time": 242.88,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 30000,
+      "n_nodes": 185,
+      "execution_time": 245.25,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 35000,
+      "n_nodes": 25,
+      "execution_time": 829.06,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 35000,
+      "n_nodes": 35,
+      "execution_time": 533.0,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 35000,
+      "n_nodes": 45,
+      "execution_time": 361.52,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 35000,
+      "n_nodes": 55,
+      "execution_time": 358.62,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 35000,
+      "n_nodes": 65,
+      "execution_time": 355.71,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 35000,
+      "n_nodes": 75,
+      "execution_time": 314.75,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 35000,
+      "n_nodes": 85,
+      "execution_time": 297.48,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 35000,
+      "n_nodes": 95,
+      "execution_time": 295.27,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 35000,
+      "n_nodes": 105,
+      "execution_time": 269.87,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 35000,
+      "n_nodes": 115,
+      "execution_time": 269.88,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 35000,
+      "n_nodes": 125,
+      "execution_time": 265.58,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 35000,
+      "n_nodes": 135,
+      "execution_time": 265.41,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 35000,
+      "n_nodes": 145,
+      "execution_time": 263.3,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 35000,
+      "n_nodes": 155,
+      "execution_time": 258.86,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 35000,
+      "n_nodes": 165,
+      "execution_time": 239.73,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 35000,
+      "n_nodes": 175,
+      "execution_time": 239.73,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 35000,
+      "n_nodes": 185,
+      "execution_time": 239.94,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 25,
+      "execution_time": 607.89,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 35,
+      "execution_time": 500.8,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 45,
+      "execution_time": 395.54,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 55,
+      "execution_time": 389.12,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 65,
+      "execution_time": 386.91,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 75,
+      "execution_time": 368.41,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 85,
+      "execution_time": 307.4,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 95,
+      "execution_time": 295.36,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 105,
+      "execution_time": 280.3,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 115,
+      "execution_time": 279.59,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 125,
+      "execution_time": 263.56,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 135,
+      "execution_time": 360.07,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 145,
+      "execution_time": 251.3,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 155,
+      "execution_time": 256.22,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 165,
+      "execution_time": 253.36,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 175,
+      "execution_time": 253.56,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 40000,
+      "n_nodes": 185,
+      "execution_time": 256.17,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 45000,
+      "n_nodes": 25,
+      "execution_time": 1043.0,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 45000,
+      "n_nodes": 35,
+      "execution_time": 637.9,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 45000,
+      "n_nodes": 45,
+      "execution_time": 414.51,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 45000,
+      "n_nodes": 55,
+      "execution_time": 413.23,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 45000,
+      "n_nodes": 65,
+      "execution_time": 408.91,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 45000,
+      "n_nodes": 75,
+      "execution_time": 407.4,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 45000,
+      "n_nodes": 85,
+      "execution_time": 409.1,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 45000,
+      "n_nodes": 95,
+      "execution_time": 396.36,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 45000,
+      "n_nodes": 105,
+      "execution_time": 378.58,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 45000,
+      "n_nodes": 115,
+      "execution_time": 378.69,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 45000,
+      "n_nodes": 125,
+      "execution_time": 382.69,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 45000,
+      "n_nodes": 135,
+      "execution_time": 315.47,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 45000,
+      "n_nodes": 145,
+      "execution_time": 297.45,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 45000,
+      "n_nodes": 155,
+      "execution_time": 313.12,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 45000,
+      "n_nodes": 165,
+      "execution_time": 337.2,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 45000,
+      "n_nodes": 175,
+      "execution_time": 332.46,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 45000,
+      "n_nodes": 185,
+      "execution_time": 332.04,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 25,
+      "execution_time": 794.42,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 35,
+      "execution_time": 706.5,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 45,
+      "execution_time": 681.63,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 55,
+      "execution_time": 580.6,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 65,
+      "execution_time": 435.98,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 75,
+      "execution_time": 429.4,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 85,
+      "execution_time": 383.37,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 95,
+      "execution_time": 357.57,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 105,
+      "execution_time": 349.17,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 115,
+      "execution_time": 343.35,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 125,
+      "execution_time": 328.69,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 135,
+      "execution_time": 319.07,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 145,
+      "execution_time": 315.45,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 155,
+      "execution_time": 319.97,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 165,
+      "execution_time": 315.7,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 175,
+      "execution_time": 309.42,
+      "table": "table_2"
+    },
+    {
+      "dataset_size": 50000,
+      "n_nodes": 185,
+      "execution_time": 307.57,
+      "table": "table_2"
+    }
+  ]
+}

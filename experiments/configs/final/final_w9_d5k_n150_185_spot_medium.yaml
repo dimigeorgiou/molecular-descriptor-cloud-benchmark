@@ -1,0 +1,17 @@
+# Auto-generated from manifest.yaml — do not edit by hand.
+# Wave 9: Re-verify Spot failure boundary N≥150 at D=5k
+# Paper: §7 — post-infra-fix confirmation
+name: final_w9_d5k_n150_185_spot_medium
+mode: compute_only
+smiles_complexity: medium
+descriptor_method: default
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 3
+dataset_dir: datasets/samples
+grid_pairs:
+- - 5000
+  - 150
+- - 5000
+  - 185

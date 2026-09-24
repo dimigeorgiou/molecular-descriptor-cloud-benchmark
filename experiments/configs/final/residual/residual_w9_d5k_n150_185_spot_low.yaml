@@ -1,0 +1,16 @@
+# Residual final-campaign config (auto)
+# wave=9 closes paper limitations gap
+name: residual_w9_d5k_n150_185_spot_low
+mode: compute_only
+smiles_complexity: low
+descriptor_method: default
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 3
+dataset_dir: datasets/samples
+dataset_sizes:
+- 5000
+node_configs:
+- 150
+- 185

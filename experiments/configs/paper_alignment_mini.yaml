@@ -1,0 +1,39 @@
+# Paper-alignment mini grid: enough (D,N) points to sanity-check T(N,D) vs paper Section 7.
+#
+# Estimator:
+#   PYTHONPATH=. python experiments/estimator/experiment_estimator.py \
+#     --config experiments/configs/paper_alignment_mini.yaml \
+#     --dataset-dir datasets/samples --verbose
+#
+# Local (quick, no AWS):
+#   PYTHONPATH=. python experiments/run_experiment.py --local \
+#     --config experiments/configs/paper_alignment_mini.yaml \
+#     --dataset-dir datasets/samples
+#
+# Batch (after Phase 0 container deploy):
+#   PYTHONPATH=. python experiments/run_experiment.py \
+#     --config experiments/configs/paper_alignment_mini.yaml \
+#     --dataset-dir datasets/samples
+
+name: paper_alignment_mini
+
+mode: compute_only
+
+smiles_complexity: low
+descriptor_method: default
+
+dataset_sizes:
+  - 5000
+  - 10000
+
+node_configs:
+  - 10
+  - 25
+  - 50
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 1
+
+dataset_dir: datasets/samples

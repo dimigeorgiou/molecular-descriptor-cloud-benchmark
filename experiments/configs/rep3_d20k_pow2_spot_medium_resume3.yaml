@@ -1,0 +1,19 @@
+# RESUME3 — final MISSING/PARTIAL fill
+name: rep3_d20k_pow2_spot_medium_resume3
+
+mode: compute_only
+smiles_complexity: medium
+descriptor_method: default
+
+dataset_sizes:
+  - 20000
+
+node_configs:
+  - 32
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 1
+
+dataset_dir: datasets/samples

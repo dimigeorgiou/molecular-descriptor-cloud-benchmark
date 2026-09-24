@@ -1,0 +1,25 @@
+# D=20k & D=40k power-of-2 Spot sweep — low complexity, 1 replica.
+# Fills gap for N*(D) interpolation between D=10k and D=50k probes.
+name: probe_d20k_d40k_pow2_spot_low
+
+mode: compute_only
+smiles_complexity: low
+descriptor_method: default
+
+dataset_sizes:
+  - 20000
+  - 40000
+
+node_configs:
+  - 2
+  - 4
+  - 8
+  - 16
+  - 32
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 1
+
+dataset_dir: datasets/samples

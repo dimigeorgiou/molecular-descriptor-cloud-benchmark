@@ -1,0 +1,25 @@
+# D=50k power-of-2 Spot sweep — low complexity, 2 replicas.
+name: probe_d50k_pow2_spot_low
+
+mode: compute_only
+smiles_complexity: low
+descriptor_method: default
+
+dataset_sizes:
+  - 50000
+
+node_configs:
+  - 2
+  - 4
+  - 8
+  - 16
+  - 32
+  - 64
+  - 128
+
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 2
+
+dataset_dir: datasets/samples

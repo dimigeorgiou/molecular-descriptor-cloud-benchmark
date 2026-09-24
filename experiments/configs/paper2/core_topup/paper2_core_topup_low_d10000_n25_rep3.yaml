@@ -1,0 +1,13 @@
+name: paper2_core_topup_low_d10000_n25_rep3
+mode: full_pipeline
+smiles_complexity: low
+descriptor_method: default
+dataset_sizes:
+- 10000
+node_configs:
+- 25
+vcpus_per_node: 4
+gb_per_node: 8
+use_spot: true
+n_replicas: 1
+dataset_dir: datasets/samples
