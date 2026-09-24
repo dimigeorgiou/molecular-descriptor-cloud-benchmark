@@ -1,0 +1,29 @@
+# Citation File Format — chemoinformatics-descriptor-computation
+cff-version: 1.2.0
+title: "Optimal Resource Allocation for Distributed Descriptor Computation in Cheminformatics"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: Didachos
+    given-names: Christos
+  - family-names: Georgiou
+    given-names: Dimitrios
+  - family-names: Fousteris
+    given-names: Manolis
+  - family-names: Kanavos
+    given-names: Andreas
+year: 2025
+repository-code: "https://github.com/dimigeorgiou/chemoinformatics-descriptor-computation"
+preferred-citation:
+  type: conference-paper
+  title: "Optimal Resource Allocation for Distributed Descriptor Computation in Cheminformatics"
+  authors:
+    - family-names: Didachos
+      given-names: Christos
+    - family-names: Georgiou
+      given-names: Dimitrios
+    - family-names: Fousteris
+      given-names: Manolis
+    - family-names: Kanavos
+      given-names: Andreas
+  year: 2025

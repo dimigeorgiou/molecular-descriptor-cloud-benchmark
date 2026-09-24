@@ -107,3 +107,7 @@ agents/TEMP/
 # Local venvs
 .venv-pull/
 .venv*/
+
+# Local venvs
+.venv-pull/
+.venv*/
