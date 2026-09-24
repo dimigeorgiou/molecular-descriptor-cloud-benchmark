@@ -18,7 +18,7 @@ MINI_JSON = MINI_RUN / "local_compute_only_20260707_233529.json"
 @pytest.mark.skipif(not MINI_JSON.exists(), reason="paper_alignment_mini run not found")
 def test_d10k_local_within_3x_of_paper_reference() -> None:
     """D=10k N=50 local full-shard time should be same order of magnitude as paper ~199s."""
-    from src.core.model import ModelCoefficients
+    from descriptor_cloud_benchmark.core.model import ModelCoefficients
 
     rows = json.loads(MINI_JSON.read_text())
     d10k = [r for r in rows if r["dataset_size"] == 10000]

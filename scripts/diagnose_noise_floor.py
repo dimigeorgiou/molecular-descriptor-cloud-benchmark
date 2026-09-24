@@ -21,7 +21,7 @@ from statistics import mean, stdev
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO))
 
-from src.core.replica_analysis import aggregate_replicas, coefficient_of_variation
+from descriptor_cloud_benchmark.core.replica_analysis import aggregate_replicas, coefficient_of_variation
 
 
 def _wall_from_row(row: dict) -> float:
@@ -69,7 +69,7 @@ def load_rows_from_sheets(sheet_id: str) -> list[dict]:
     from dotenv import load_dotenv
 
     load_dotenv()
-    from src.monitoring.sheets import read_results_rows
+    from descriptor_cloud_benchmark.monitoring.sheets import read_results_rows
 
     rows = read_results_rows(sheet_id)
     if not rows:

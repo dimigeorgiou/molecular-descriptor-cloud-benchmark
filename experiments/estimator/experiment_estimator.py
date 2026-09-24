@@ -32,15 +32,15 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from src.aws.pricing import (
+from descriptor_cloud_benchmark.aws.pricing import (
     SCHEDULING_WARM_SEC,
     blended_cluster_init_sec,
     dual_tier_costs,
     grid_amortized_cluster_init_sec,
     tier_label,
 )
-from src.core.model import ModelCoefficients
-from src.monitoring.sheets import (
+from descriptor_cloud_benchmark.core.model import ModelCoefficients
+from descriptor_cloud_benchmark.monitoring.sheets import (
     ESTIMATES_HEADERS,
     append_estimate_row_for_config,
     get_sheet,
@@ -59,7 +59,7 @@ def load_model(model_path: Optional[Path]) -> ModelCoefficients:
         console.print(f"[green]Using fitted model from:[/] {model_path}")
         return ModelCoefficients.load(model_path)
     try:
-        from src.core.model import load_paper_fitted
+        from descriptor_cloud_benchmark.core.model import load_paper_fitted
 
         model = load_paper_fitted()
         console.print(
@@ -262,7 +262,7 @@ def estimate_config(
         elif n_replicas > 1:
             cluster_init_sec = blended_cluster_init_sec(n_replicas)
         else:
-            from src.aws.pricing import CLUSTER_INIT_COLD_SEC
+            from descriptor_cloud_benchmark.aws.pricing import CLUSTER_INIT_COLD_SEC
 
             cluster_init_sec = CLUSTER_INIT_COLD_SEC
         scheduling_sec = SCHEDULING_WARM_SEC

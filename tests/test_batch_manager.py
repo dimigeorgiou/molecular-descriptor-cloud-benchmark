@@ -6,7 +6,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from src.aws.batch_manager import BatchJobConfig, resolve_batch_queue, submit_batch_job
+from descriptor_cloud_benchmark.aws.batch_manager import BatchJobConfig, resolve_batch_queue, submit_batch_job
 
 
 def test_resolve_batch_queue_ondemand_explicit(monkeypatch: pytest.MonkeyPatch) -> None:
@@ -20,7 +20,7 @@ def test_resolve_batch_queue_spot_explicit(monkeypatch: pytest.MonkeyPatch) -> N
     assert resolve_batch_queue(use_spot=True) == "chemo-spot-queue"
 
 
-@patch("src.aws.batch_manager.boto3.client")
+@patch("descriptor_cloud_benchmark.aws.batch_manager.boto3.client")
 def test_submit_batch_job_includes_retry_strategy(mock_boto: MagicMock) -> None:
     mock_client = MagicMock()
     mock_client.submit_job.return_value = {"jobId": "job-1"}
@@ -44,7 +44,7 @@ def test_submit_batch_job_includes_retry_strategy(mock_boto: MagicMock) -> None:
     assert kwargs["arrayProperties"] == {"size": 25}
 
 
-@patch("src.aws.batch_manager.boto3.client")
+@patch("descriptor_cloud_benchmark.aws.batch_manager.boto3.client")
 def test_submit_batch_job_n1_is_not_array(mock_boto: MagicMock) -> None:
     mock_client = MagicMock()
     mock_client.submit_job.return_value = {"jobId": "job-solo"}

@@ -12,7 +12,7 @@ from typing import Optional
 import numpy as np
 from loguru import logger
 
-_REPO_ROOT = Path(__file__).resolve().parents[2]
+_REPO_ROOT = Path(__file__).resolve().parents[3]
 _PAPER_EXECUTION_TIMES_PATH = _REPO_ROOT / "data" / "paper_execution_times.json"
 # Legacy path — must NOT be used for paper_fitted (was Spot replication data).
 _PAPER_TABLE1_PATH = _REPO_ROOT / "data" / "paper_table1_execution_times.json"

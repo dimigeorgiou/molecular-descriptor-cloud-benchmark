@@ -7,7 +7,7 @@ Paper Section 7 reference times (approximate):
 """
 from __future__ import annotations
 
-from src.core.model import ModelCoefficients
+from descriptor_cloud_benchmark.core.model import ModelCoefficients
 
 
 def test_paper_model_predicts_order_of_magnitude_at_10k() -> None:

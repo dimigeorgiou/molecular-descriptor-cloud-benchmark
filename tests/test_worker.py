@@ -11,7 +11,7 @@ import pytest
 
 pytest.importorskip("rdkit")
 
-from src.worker.compute_descriptors import run_compute
+from descriptor_cloud_benchmark.worker.compute_descriptors import run_compute
 
 
 def test_run_compute_100_csv_writes_valid_json(

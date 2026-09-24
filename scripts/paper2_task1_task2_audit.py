@@ -239,7 +239,7 @@ def measure_od_spot_ratio(rows: list[dict]) -> dict[str, Any]:
 
 def estimate_job_cost_usd(N: int, wall_sec: float, *, spot: bool = True) -> float:
     """Rough Batch cost: N containers × 4 vCPU × 8 GB × wall time."""
-    from src.aws.pricing import PricingTier, cluster_billing_cost_usd
+    from descriptor_cloud_benchmark.aws.pricing import PricingTier, cluster_billing_cost_usd
 
     return cluster_billing_cost_usd(
         N,
@@ -251,7 +251,7 @@ def estimate_job_cost_usd(N: int, wall_sec: float, *, spot: bool = True) -> floa
 
 
 def main() -> None:
-    from src.monitoring.sheets import read_results_rows
+    from descriptor_cloud_benchmark.monitoring.sheets import read_results_rows
 
     sid = os.environ.get("GOOGLE_SHEETS_ID") or "1jKcVFH-CB_sEmXffemcylaY65eUTMCa0jY8fv8lftbs"
     region = os.environ.get("AWS_REGION") or os.environ.get("AWS_DEFAULT_REGION") or "eu-central-1"
@@ -321,7 +321,7 @@ def main() -> None:
         # Last resort: recompute from wall × nodes × rates
         wall = r["RealWallClock"] or r["RealTotalPipeline"]
         if wall and r["N"] > 0:
-            from src.aws.pricing import PricingTier, cluster_billing_cost_usd
+            from descriptor_cloud_benchmark.aws.pricing import PricingTier, cluster_billing_cost_usd
 
             r["CostSpotEquivModeledUSD"] = float(
                 cluster_billing_cost_usd(

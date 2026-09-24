@@ -1,7 +1,7 @@
 """Tests for replica aggregation helpers."""
 from __future__ import annotations
 
-from src.core.replica_analysis import aggregate_replicas, coefficient_of_variation
+from descriptor_cloud_benchmark.core.replica_analysis import aggregate_replicas, coefficient_of_variation
 
 
 def test_aggregate_replicas_single_row_degenerate() -> None:

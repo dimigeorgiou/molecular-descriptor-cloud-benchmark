@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from src.core.model import ModelCoefficients
+from descriptor_cloud_benchmark.core.model import ModelCoefficients
 from experiments.estimator.experiment_estimator import (
     estimate_config,
     load_config,

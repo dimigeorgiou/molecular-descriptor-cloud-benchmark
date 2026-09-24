@@ -11,7 +11,7 @@ from unittest.mock import MagicMock, patch
 import pytest
 
 
-@patch("src.monitoring.sheets._get_client")
+@patch("descriptor_cloud_benchmark.monitoring.sheets._get_client")
 def test_append_timing_result_mock_workbook(mock_get_client: MagicMock) -> None:
     """upsert_timing_result appends when no matching row exists (mocked gspread)."""
     mock_ws = MagicMock()
@@ -23,7 +23,7 @@ def test_append_timing_result_mock_workbook(mock_get_client: MagicMock) -> None:
     mock_gc.open_by_key.return_value = mock_sh
     mock_get_client.return_value = mock_gc
 
-    from src.monitoring.sheets import RESULTS_HEADERS, append_timing_result
+    from descriptor_cloud_benchmark.monitoring.sheets import RESULTS_HEADERS, append_timing_result
 
     result_row = {
         "experiment_id": "test_exp",
@@ -57,7 +57,7 @@ def test_append_timing_result_mock_workbook(mock_get_client: MagicMock) -> None:
 
 
 def test_complexity_pivot_query_formula_succeeded_wall_clock() -> None:
-    from src.monitoring.sheets import complexity_pivot_query_formula
+    from descriptor_cloud_benchmark.monitoring.sheets import complexity_pivot_query_formula
 
     f = complexity_pivot_query_formula(
         complexity="low",
@@ -73,7 +73,7 @@ def test_complexity_pivot_query_formula_succeeded_wall_clock() -> None:
 
 
 def test_complexity_pivot_query_formula_compute_only() -> None:
-    from src.monitoring.sheets import complexity_pivot_query_formula
+    from descriptor_cloud_benchmark.monitoring.sheets import complexity_pivot_query_formula
 
     f = complexity_pivot_query_formula(
         complexity="low",
@@ -88,7 +88,7 @@ def test_complexity_pivot_query_formula_compute_only() -> None:
 
 
 def test_complexity_pivot_query_formula_total_pipeline() -> None:
-    from src.monitoring.sheets import complexity_pivot_query_formula
+    from descriptor_cloud_benchmark.monitoring.sheets import complexity_pivot_query_formula
 
     f = complexity_pivot_query_formula(
         complexity="medium",
@@ -103,7 +103,7 @@ def test_complexity_pivot_query_formula_total_pipeline() -> None:
 
 
 def test_complexity_min_marker_formula() -> None:
-    from src.monitoring.sheets import complexity_min_marker_formula
+    from descriptor_cloud_benchmark.monitoring.sheets import complexity_min_marker_formula
 
     f = complexity_min_marker_formula(data_col="B", row=3)
     assert "FILTER(B$2:B$15" in f
@@ -112,7 +112,7 @@ def test_complexity_min_marker_formula() -> None:
 
 
 def test_complexity_experiment_filter_defaults() -> None:
-    from src.monitoring.sheets import _complexity_experiment_filter
+    from descriptor_cloud_benchmark.monitoring.sheets import _complexity_experiment_filter
 
     assert (
         _complexity_experiment_filter("low", experiment_id=None)
@@ -121,18 +121,18 @@ def test_complexity_experiment_filter_defaults() -> None:
     assert _complexity_experiment_filter("low", experiment_id="custom") == "custom"
 
 
-@patch("src.monitoring.sheets.get_sheet")
+@patch("descriptor_cloud_benchmark.monitoring.sheets.get_sheet")
 def test_append_estimate_row_for_config_mock_worksheet(mock_get_sheet: MagicMock) -> None:
     """append_estimate_row_for_config appends one row with D, N, complexity when get_sheet is mocked."""
     mock_ws = MagicMock()
     mock_ws.row_values.return_value = ["header1", "header2"]
     mock_get_sheet.return_value = mock_ws
 
-    from src.monitoring.sheets import ESTIMATES_HEADERS, append_estimate_row_for_config
+    from descriptor_cloud_benchmark.monitoring.sheets import ESTIMATES_HEADERS, append_estimate_row_for_config
 
     summary = {
         "experiment_name": "test_estimator",
-        "config_path": "experiments/configs/experiment_mock_100.yaml",
+        "config_path": "experiments/configs/examples/experiment_mock_100.yaml",
         "n_jobs": 1,
         "n_dataset_sizes": 1,
         "n_node_configs": 1,

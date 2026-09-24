@@ -131,7 +131,7 @@ def _nstar_quad(b: float, d: float, e: float, D: float) -> float | None:
 
 def _load_rows() -> tuple[list[list[str]], dict[str, int]]:
     load_dotenv(REPO / ".env")
-    from src.monitoring.sheets import read_results_rows
+    from descriptor_cloud_benchmark.monitoring.sheets import read_results_rows
 
     sid = os.environ.get("GOOGLE_SHEETS_ID") or "1jKcVFH-CB_sEmXffemcylaY65eUTMCa0jY8fv8lftbs"
     rows = read_results_rows(sid, limit=50000)
@@ -320,7 +320,7 @@ def main() -> None:
     }
 
     # ---- 1) Coarse Table 1 reproduction from PDF transcription ----
-    from src.core.model import fit_paper_table1_model, load_paper_fitted
+    from descriptor_cloud_benchmark.core.model import fit_paper_table1_model, load_paper_fitted
 
     model = fit_paper_table1_model()
     cached = load_paper_fitted()

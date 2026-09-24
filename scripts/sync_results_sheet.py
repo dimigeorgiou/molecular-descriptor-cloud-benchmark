@@ -32,7 +32,7 @@ def main() -> None:
     repo_root = Path(__file__).resolve().parents[1]
     sys.path.insert(0, str(repo_root))
 
-    from src.monitoring.sheets import sync_results_and_complexity_tabs
+    from descriptor_cloud_benchmark.monitoring.sheets import sync_results_and_complexity_tabs
 
     exp = args.experiment_id.strip() or None
     stats = sync_results_and_complexity_tabs(

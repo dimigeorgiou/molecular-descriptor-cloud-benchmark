@@ -5,7 +5,7 @@ WORKDIR /app
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONPATH=/app
+    PYTHONPATH=/app/src
 
 # RDKit via conda-forge; Python deps via pip (no RDKit on PyPI).
 COPY requirements.txt /app/requirements.txt

@@ -14,7 +14,7 @@ from rich.table import Table
 from rich.panel import Panel
 from rich import box
 
-from src.core.model import ModelCoefficients
+from descriptor_cloud_benchmark.core.model import ModelCoefficients
 
 
 RESULTS_DIR = Path("experiments/results")

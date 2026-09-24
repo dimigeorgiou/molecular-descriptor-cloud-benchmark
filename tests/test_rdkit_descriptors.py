@@ -7,7 +7,7 @@ import pytest
 
 pytest.importorskip("rdkit")
 
-from src.worker.rdkit_descriptors import (
+from descriptor_cloud_benchmark.worker.rdkit_descriptors import (
     compute_descriptors_for_smiles,
     descriptor_names,
     require_rdkit,

@@ -523,7 +523,7 @@ def main() -> None:
     if args.refresh_sheet or not csv_path.is_file():
         print("Refreshing sheet export…")
         # inline refresh without re-entering audit CLI noise too much
-        from src.monitoring.sheets import read_results_rows
+        from descriptor_cloud_benchmark.monitoring.sheets import read_results_rows
         from scripts.paper2_task1_task2_audit import correct_row
 
         sid = os.environ.get("GOOGLE_SHEETS_ID")

@@ -1,16 +1,37 @@
-# Secrets & local env (never commit)
+# Secrets & local config
 .env
 .env.*
 !.env.example
+config/config.ini
+config/secrets/
 *.pem
 *.key
+*.pickle
 credentials/**
 !credentials/.gitkeep
 config/**/*.json
 !config/.gitkeep
+!config/config.example.ini
 **/google_service_account.json
 **/service_account*.json
-**/secrets/
+
+# Local data / outputs / scratch
+data/local/
+datasets/samples/*.csv
+datasets/samples/*.parquet
+!datasets/samples/.gitkeep
+experiments/results/
+experiments/runs/
+experiments/**/output/
+experiments/**/*.lock
+!experiments/results/.gitkeep
+outputs/*
+!outputs/.gitkeep
+logs/
+tmp/
+temp/
+.tmp/
+legacy/
 
 # Python
 __pycache__/
@@ -19,27 +40,16 @@ __pycache__/
 *.so
 .Python
 build/
-develop-eggs/
 dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
 *.egg-info/
-.installed.cfg
-*.egg
+.eggs/
 .venv/
+.venv*/
 venv/
 ENV/
-.env/
 *.pth
 
-# Test / type / lint caches
+# Test / type / lint
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
@@ -47,67 +57,14 @@ ENV/
 .coverage.*
 htmlcov/
 .tox/
-.nox/
-.hypothesis/
 .cache/
+.ipynb_checkpoints/
 
 # IDE / OS
 .idea/
 .vscode/
-*.swp
-*.swo
-*~
+.cursorrules
 .DS_Store
 Thumbs.db
-
-# Logs & local scratch
-logs/
-*.log
-tmp/
-temp/
-.tmp/
-
-# Experiment run artifacts (configs stay tracked)
-experiments/results/
-experiments/runs/
-experiments/**/output/
-experiments/**/*.lock
-
-# Generated SMILES datasets (regenerate via datasets/generators/)
-datasets/samples/*.csv
-datasets/samples/*.parquet
-datasets/samples/*.pkl
-!datasets/samples/.gitkeep
-
-# Large local data dumps (keep small paper JSON under data/)
-data/raw/
-data/processed/
-*.h5
-*.hdf5
-*.npz
-*.feather
-
-# Docker / local image leftovers
-*.tar
-*.tar.gz
-!docs/**/*.tar.gz
-
-# Jupyter
-.ipynb_checkpoints/
-*/.ipynb_checkpoints/
-
-# AWS / CLI local state (if ever dropped in-repo)
-.aws/
-*.credentials
-
-# Cursor / agent temp
-.cursor/TEMP/
-agents/TEMP/
-
-# Local venvs
-.venv-pull/
-.venv*/
-
-# Local venvs
-.venv-pull/
-.venv*/
+*.swp
+*~

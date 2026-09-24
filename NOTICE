@@ -1,0 +1,28 @@
+# NOTICE
+
+This repository is companion source code for:
+
+> Performance and Cost Benchmarking of Cloud Resources for Large-Scale Molecular Descriptor Computation
+
+Authors: Christos Didachos, Dimitrios Georgiou, Manolis Fousteris, Andreas Kanavos  
+Affiliations: University of Patras / Ionian University
+
+## Licensed
+
+- Pipeline / library / experiment harness code under MIT (see `LICENSE`).
+
+## Not redistributed
+
+- AWS credentials, `.env`, and Google service-account JSON
+- Live Google Sheets exports and experiment result dumps under `tmp/` / `experiments/results/`
+- Large generated SMILES corpora (regenerate via `datasets/generators/`)
+
+## Research scope
+
+- This code benchmarks cloud resource usage for molecular descriptor workloads.
+- It does not provide medical advice or clinical decision support.
+- Cloud cost figures depend on region, instance family, Spot vs On-Demand, and account discounts; treat published USD as study-specific.
+
+## Paper status
+
+- Publisher DOI / venue proceedings link: forthcoming

@@ -1,19 +1,24 @@
-# Citation File Format — molecular-descriptor-cloud-benchmark
 cff-version: 1.2.0
 title: "Performance and Cost Benchmarking of Cloud Resources for Large-Scale Molecular Descriptor Computation"
-message: "If you use this software, please cite it as below."
+message: "If you use this software or method, please cite the paper and this repository."
 type: software
 authors:
   - family-names: Didachos
     given-names: Christos
+    affiliation: "University of Patras / Ionian University"
   - family-names: Georgiou
     given-names: Dimitrios
+    affiliation: "University of Patras / Ionian University"
   - family-names: Fousteris
     given-names: Manolis
+    affiliation: "University of Patras / Ionian University"
   - family-names: Kanavos
     given-names: Andreas
+    affiliation: "University of Patras / Ionian University"
 year: 2025
 repository-code: "https://github.com/dimigeorgiou/molecular-descriptor-cloud-benchmark"
+license: MIT
+version: "1.0.0"
 preferred-citation:
   type: conference-paper
   title: "Performance and Cost Benchmarking of Cloud Resources for Large-Scale Molecular Descriptor Computation"
@@ -27,3 +32,4 @@ preferred-citation:
     - family-names: Kanavos
       given-names: Andreas
   year: 2025
+  notes: "Publisher DOI forthcoming"

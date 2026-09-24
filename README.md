@@ -1,150 +1,161 @@
 # Performance and Cost Benchmarking of Cloud Resources for Large-Scale Molecular Descriptor Computation
 
-Code accompanying the paper of the same title: empirical **performance and cost benchmarking** of cloud resources for large-scale molecular descriptor computation on **AWS Batch**.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
+[![Venue](https://img.shields.io/badge/venue-forthcoming-lightgrey.svg)](#)
+[![DOI](https://img.shields.io/badge/DOI-forthcoming-lightgrey.svg)](#)
 
-Paper model (resource-allocation analysis):
-
-\[
-T(N,D) = a + bN + cD + dN^{2} + eND, \qquad
-N^{*}(D) = -\frac{b + eD}{2d}\quad (d > 0)
-\]
-
-where \(N\) is the worker count and \(D\) is the dataset size (number of molecules).
+Companion source code for the paper of the same title.  
+**Paper PDF / publisher DOI:** forthcoming.
 
 **Authors:** Christos Didachos, Dimitrios Georgiou, Manolis Fousteris, Andreas Kanavos  
 **Affiliations:** University of Patras / Ionian University
 
 ---
 
-## Repository layout
+## Abstract
 
-```
-src/                 # Core library (model, Batch timing, workers, Sheets)
-experiments/         # Runner, estimator, example + paper2 configs
-scripts/             # Paper analysis / setup helpers
-datasets/generators/ # SMILES dataset generators
-docker/              # Batch worker image
-tests/               # Unit tests
-data/                # Paper coefficient / table JSON snapshots
-docs/                # Paper PDF + AWS Batch options note
-archive/             # Historical ops scripts & campaign configs (not required to reproduce)
-```
+Large-scale molecular descriptor computation is a common bottleneck in cheminformatics pipelines. This companion repository provides an AWS Batch measurement harness and analysis tooling to benchmark **wall-clock performance** and **monetary cost** across dataset size \(D\), worker count \(N\), SMILES complexity, and Spot vs On-Demand capacity — supporting reproducible cloud-resource decisions for descriptor workloads.
 
 ---
 
-## Setup
+## Contributions
 
-```bash
-conda env create -f environment.yml
-conda activate venv_chemoinformatics
-cd /path/to/molecular-descriptor-cloud-benchmark
-export PYTHONPATH=.
-cp .env.example .env   # fill AWS / S3 / Batch / optional Sheets
+- End-to-end **AWS Batch** experiment runner (local dry-run + EC2 array jobs)
+- Pre-run **time/cost estimator** aligned with the paper performance model
+- Timing decomposition (upload, cluster init, parallel compute, pipeline totals)
+- Optional Google Sheets sync for multi-replicate campaign tracking
+- Analysis scripts for cost backfill, model fits (N≤185), and config selection
+
+---
+
+## Method / pipeline
+
+```text
+SMILES CSV  →  S3 shards  →  AWS Batch workers (RDKit descriptors)
+                ↓
+         phase timings + cost
+                ↓
+     Sheets / JSON results  →  model fit & cost analysis
 ```
 
-Pip-only core (RDKit still via conda):
+Resource-allocation model used in the study:
 
-```bash
-pip install -r requirements.txt
-pip install -r requirements-analysis.txt   # optional plotting
-conda install -c conda-forge rdkit
-```
+\[
+T(N,D) = a + bN + cD + dN^{2} + eND, \qquad
+N^{*}(D) = -\frac{b + eD}{2d}\quad (d > 0)
+\]
 
-Authenticate with `aws configure` **or** keys in `.env`. Never commit `.env` or service-account JSON.
+Canonical implementation: `src/descriptor_cloud_benchmark/core/model.py`.
 
-```bash
-aws sts get-caller-identity
-PYTHONPATH=. python scripts/validate_setup.py
+---
+
+## This system is / is not
+
+| Is | Is not |
+|----|--------|
+| A **benchmark harness** for descriptor jobs on AWS Batch | A production cheminformatics SaaS |
+| A way to compare **Spot vs On-Demand** cost/time | A guarantee of lowest cloud prices in every region |
+| Code to reproduce experimental grids and analyses | A substitute for the paper’s full empirical narrative |
+
+---
+
+## Repository layout
+
+```text
+README.md, LICENSE, NOTICE, CITATION.cff, pyproject.toml
+main.py                              # thin CLI
+config/config.example.ini            # placeholders only
+src/descriptor_cloud_benchmark/     # installable package
+  core/   aws/   worker/   monitoring/
+experiments/                         # runner, estimator, example configs
+scripts/                             # paper analysis helpers + run.sh
+datasets/generators/                 # SMILES generators
+docker/                              # Batch worker image
+tests/
+data/                                # paper coefficient JSON snapshots
+outputs/                             # local artifacts (gitignored contents)
+archive/                             # historical ops configs (optional)
 ```
 
 ---
 
 ## Quick start
 
-**1. Generate a small SMILES set**
-
 ```bash
-PYTHONPATH=. python datasets/generators/smiles_generator.py \
-  --n-compounds 100 --complexity low --output datasets/samples/smiles_100_low.csv
+conda env create -f environment.yml
+conda activate venv_chemoinformatics
+pip install -e ".[dev]"
+cp .env.example .env          # AWS / S3 / Batch / optional Sheets
+# or: cp config/config.example.ini config/config.ini
 ```
 
-**2. Estimate time/cost before spending AWS budget**
-
 ```bash
-PYTHONPATH=. python experiments/estimator/experiment_estimator.py \
+# Model probe
+python main.py model --N 50 --D 10000
+# → T(N,D) seconds and N*(D)
+
+# Pre-run estimate (before spending AWS budget)
+python main.py estimate \
   --config experiments/configs/examples/experiment_00_quick.yaml \
   --dataset-dir datasets/samples
-```
 
-**3. Local dry-run**
-
-```bash
-PYTHONPATH=. python experiments/run_experiment.py \
+# Local dry-run
+PYTHONPATH=src python experiments/run_experiment.py \
   --config experiments/configs/examples/experiment_mock_100.yaml \
   --local
+
+# Tests
+pytest -q
 ```
 
-**4. Paper-scale Batch** (requires configured queue + job definition in `.env`)
+Generate SMILES samples with `datasets/generators/` (large CSVs are not shipped).
 
-```bash
-PYTHONPATH=. python experiments/run_experiment.py \
-  --config experiments/configs/examples/paper_replication_low_full_pipeline.yaml
-```
-
-**5. Tests**
-
-```bash
-PYTHONPATH=. pytest -q
-```
+Authenticate with `aws configure` or keys in `.env`. Never commit secrets.
 
 ---
 
-## Performance model API
+## Ethics & safety
 
-```bash
-PYTHONPATH=. python -c "
-from src.core.model import ModelCoefficients
-m = ModelCoefficients()
-print(m.predict(N=50, D=10000))
-print(m.optimal_nodes(D=10000))
-"
-```
-
-Canonical implementation: `src/core/model.py`.
+- No human-subjects or clinical data are used in this repository.
+- Do not commit AWS keys, OAuth tokens, or service-account JSON.
+- Reported USD costs are study- and account-specific.
 
 ---
 
-## Paper analysis scripts
+## Authors
 
-| Script | Role |
-|--------|------|
-| `scripts/paper2_task1_task2_audit.py` | Sheet audit + Spot cost backfill |
-| `scripts/run_paper2_core_topup.py` | Top-up replicates on established grid |
-| `scripts/paper2_tasks3_5_n185.py` | Time/cost models + config selector (N≤185) |
-| `scripts/paper2_task3_refit_raw_rows.py` | Raw-row refit / medians check |
-| `scripts/analyze_paper_metrics.py` | Metric diagnostics |
+- **Christos Didachos** — University of Patras / Ionian University  
+- **Dimitrios Georgiou** — University of Patras / Ionian University  
+- **Manolis Fousteris** — University of Patras / Ionian University  
+- **Andreas Kanavos** — University of Patras / Ionian University  
+
+---
+
+## Acknowledgments
+
+AWS Batch / Spot capacity and institutional research computing support as acknowledged in the paper (forthcoming).
 
 ---
 
 ## How to cite
 
-If you use this code or the associated results, please cite:
+If you use this software or method, please cite:
 
 ```bibtex
 @inproceedings{didachos2025descriptorbenchmark,
-  title={Performance and Cost Benchmarking of Cloud Resources for Large-Scale Molecular Descriptor Computation},
-  author={Didachos, Christos and Georgiou, Dimitrios and Fousteris, Manolis and Kanavos, Andreas},
-  year={2025}
+  title     = {Performance and Cost Benchmarking of Cloud Resources for Large-Scale Molecular Descriptor Computation},
+  author    = {Didachos, Christos and Georgiou, Dimitrios and Fousteris, Manolis and Kanavos, Andreas},
+  year      = {2025},
+  note      = {Publisher DOI forthcoming; code: https://github.com/dimigeorgiou/molecular-descriptor-cloud-benchmark}
 }
 ```
 
-**APA-style:**  
-Didachos, C., Georgiou, D., Fousteris, M., & Kanavos, A. (2025). *Performance and Cost Benchmarking of Cloud Resources for Large-Scale Molecular Descriptor Computation*.
-
-**Code:** https://github.com/dimigeorgiou/molecular-descriptor-cloud-benchmark
+**APA:**  
+Didachos, C., Georgiou, D., Fousteris, M., & Kanavos, A. (2025). *Performance and Cost Benchmarking of Cloud Resources for Large-Scale Molecular Descriptor Computation*. Publisher DOI forthcoming. Companion code: https://github.com/dimigeorgiou/molecular-descriptor-cloud-benchmark
 
 ---
 
-## License / secrets
+## License
 
-Research code accompanying the paper. Do not commit credentials; rotate any key that was ever shared outside a secret store.
+MIT — see `LICENSE`. Scope limits — see `NOTICE`.

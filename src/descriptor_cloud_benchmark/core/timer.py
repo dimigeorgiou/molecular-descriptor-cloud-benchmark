@@ -5,7 +5,7 @@ Provides a context-manager-based timer that can track named phases with
 millisecond precision and export a flat dict ready for Google Sheets.
 
 Usage:
-    from src.core.timer import ExperimentTimer
+    from descriptor_cloud_benchmark.core.timer import ExperimentTimer
 
     with ExperimentTimer() as t:
         with t.phase("s3_upload_sec"):

@@ -1,7 +1,7 @@
 """Tests for AWS pricing helpers."""
 from __future__ import annotations
 
-from src.aws.pricing import (
+from descriptor_cloud_benchmark.aws.pricing import (
     PricingTier,
     blended_cluster_init_sec,
     container_runtime_cost_usd,

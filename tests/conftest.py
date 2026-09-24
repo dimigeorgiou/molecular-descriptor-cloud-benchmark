@@ -34,4 +34,4 @@ def csv_100_path(fixtures_dir: Path) -> Path:
 @pytest.fixture
 def mock_config_100_path() -> Path:
     """Path to experiment_mock_100.yaml."""
-    return PROJECT_ROOT / "experiments" / "configs" / "experiment_mock_100.yaml"
+    return PROJECT_ROOT / "experiments" / "configs" / "examples" / "experiment_mock_100.yaml"

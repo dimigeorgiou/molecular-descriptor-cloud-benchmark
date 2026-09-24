@@ -18,7 +18,7 @@ import boto3
 from loguru import logger
 from tenacity import retry, stop_after_attempt, wait_exponential
 
-from src.worker.compute_descriptors import run_compute
+from descriptor_cloud_benchmark.worker.compute_descriptors import run_compute
 
 
 @retry(

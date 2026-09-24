@@ -33,16 +33,16 @@ from dotenv import load_dotenv
 from loguru import logger
 from tqdm import tqdm
 
-from src.core.batch_timing import derive_batch_array_timings, max_shard_wallclock_sec
-from src.core.timer import ExperimentTimer
-from src.aws.batch_manager import BatchJobConfig, resolve_batch_queue, submit_batch_job
-from src.aws.pricing import (
+from descriptor_cloud_benchmark.core.batch_timing import derive_batch_array_timings, max_shard_wallclock_sec
+from descriptor_cloud_benchmark.core.timer import ExperimentTimer
+from descriptor_cloud_benchmark.aws.batch_manager import BatchJobConfig, resolve_batch_queue, submit_batch_job
+from descriptor_cloud_benchmark.aws.pricing import (
     PricingTier,
     container_runtime_cost_usd,
     tier_from_use_spot,
     tier_label,
 )
-from src.monitoring.sheets import append_timing_result
+from descriptor_cloud_benchmark.monitoring.sheets import append_timing_result
 
 from experiments.verify_estimate_vs_actual import (
     _summarize_multi_report,
@@ -92,7 +92,7 @@ def _write_pre_run_estimate(
 
     This pairs with verify_estimate_vs_actual.py (--run-dir discovers estimate.json).
     """
-    from src.core.model import ModelCoefficients, load_paper_fitted
+    from descriptor_cloud_benchmark.core.model import ModelCoefficients, load_paper_fitted
 
     cfg = load_config(config_path)
     try:
@@ -664,7 +664,7 @@ def run_local_experiment(
     {dataset_dir}/smiles_{d}_{smiles_complexity}.csv; if dataset_dir is None,
     defaults to datasets/samples.
     """
-    from src.worker.compute_descriptors import run_compute
+    from descriptor_cloud_benchmark.worker.compute_descriptors import run_compute
 
     cfg = load_config(config_path)
     mode = override_mode or cfg.get("mode", "compute_only")

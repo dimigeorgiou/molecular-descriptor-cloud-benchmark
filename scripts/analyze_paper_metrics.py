@@ -32,7 +32,7 @@ def shape(pts: list[tuple[int, float]]) -> tuple[str, tuple[int, float]]:
 
 def main() -> None:
     load_dotenv()
-    from src.monitoring.sheets import read_results_rows
+    from descriptor_cloud_benchmark.monitoring.sheets import read_results_rows
 
     sid = os.environ.get("GOOGLE_SHEETS_ID")
     if not sid:

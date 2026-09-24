@@ -13,7 +13,7 @@ from pathlib import Path
 import pandas as pd
 from loguru import logger
 
-from src.worker.rdkit_descriptors import compute_descriptors_for_smiles
+from descriptor_cloud_benchmark.worker.rdkit_descriptors import compute_descriptors_for_smiles
 
 
 def _read_smiles_column(dataset_path: Path) -> list[str]:

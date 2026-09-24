@@ -1,7 +1,7 @@
 """Tests for Batch array timing decomposition."""
 from __future__ import annotations
 
-from src.core.batch_timing import derive_batch_array_timings, max_shard_wallclock_sec
+from descriptor_cloud_benchmark.core.batch_timing import derive_batch_array_timings, max_shard_wallclock_sec
 
 
 def test_derive_batch_array_timings_separates_scheduling_and_compute() -> None:

@@ -1,4 +1,1 @@
-"""
-Top-level package for the chemoinformatics descriptor computation project.
-"""
-
+# Installable package lives in descriptor_cloud_benchmark/
