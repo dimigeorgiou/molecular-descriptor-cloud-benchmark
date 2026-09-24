@@ -1,8 +1,8 @@
-# Chemoinformatics descriptor computation
+# Performance and Cost Benchmarking of Cloud Resources for Large-Scale Molecular Descriptor Computation
 
-Empirical validation code for **optimal resource allocation** when computing molecular descriptors at scale on **AWS Batch**.
+Code accompanying the paper of the same title: empirical **performance and cost benchmarking** of cloud resources for large-scale molecular descriptor computation on **AWS Batch**.
 
-Paper model:
+Paper model (resource-allocation analysis):
 
 \[
 T(N,D) = a + bN + cD + dN^{2} + eND, \qquad
@@ -37,7 +37,7 @@ archive/             # Historical ops scripts & campaign configs (not required t
 ```bash
 conda env create -f environment.yml
 conda activate venv_chemoinformatics
-cd /path/to/chemoinformatics-descriptor-computation
+cd /path/to/molecular-descriptor-cloud-benchmark
 export PYTHONPATH=.
 cp .env.example .env   # fill AWS / S3 / Batch / optional Sheets
 ```
@@ -114,7 +114,7 @@ Canonical implementation: `src/core/model.py`.
 
 ---
 
-## Paper 2 analysis scripts
+## Paper analysis scripts
 
 | Script | Role |
 |--------|------|
@@ -131,17 +131,17 @@ Canonical implementation: `src/core/model.py`.
 If you use this code or the associated results, please cite:
 
 ```bibtex
-@inproceedings{didachos2025optimal,
-  title={Optimal Resource Allocation for Distributed Descriptor Computation in Cheminformatics},
+@inproceedings{didachos2025descriptorbenchmark,
+  title={Performance and Cost Benchmarking of Cloud Resources for Large-Scale Molecular Descriptor Computation},
   author={Didachos, Christos and Georgiou, Dimitrios and Fousteris, Manolis and Kanavos, Andreas},
   year={2025}
 }
 ```
 
 **APA-style:**  
-Didachos, C., Georgiou, D., Fousteris, M., & Kanavos, A. (2025). *Optimal Resource Allocation for Distributed Descriptor Computation in Cheminformatics*.
+Didachos, C., Georgiou, D., Fousteris, M., & Kanavos, A. (2025). *Performance and Cost Benchmarking of Cloud Resources for Large-Scale Molecular Descriptor Computation*.
 
-**Code:** https://github.com/dimigeorgiou/chemoinformatics-descriptor-computation
+**Code:** https://github.com/dimigeorgiou/molecular-descriptor-cloud-benchmark
 
 ---
 

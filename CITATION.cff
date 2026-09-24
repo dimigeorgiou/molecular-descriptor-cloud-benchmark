@@ -1,6 +1,6 @@
-# Citation File Format — chemoinformatics-descriptor-computation
+# Citation File Format — molecular-descriptor-cloud-benchmark
 cff-version: 1.2.0
-title: "Optimal Resource Allocation for Distributed Descriptor Computation in Cheminformatics"
+title: "Performance and Cost Benchmarking of Cloud Resources for Large-Scale Molecular Descriptor Computation"
 message: "If you use this software, please cite it as below."
 type: software
 authors:
@@ -13,10 +13,10 @@ authors:
   - family-names: Kanavos
     given-names: Andreas
 year: 2025
-repository-code: "https://github.com/dimigeorgiou/chemoinformatics-descriptor-computation"
+repository-code: "https://github.com/dimigeorgiou/molecular-descriptor-cloud-benchmark"
 preferred-citation:
   type: conference-paper
-  title: "Optimal Resource Allocation for Distributed Descriptor Computation in Cheminformatics"
+  title: "Performance and Cost Benchmarking of Cloud Resources for Large-Scale Molecular Descriptor Computation"
   authors:
     - family-names: Didachos
       given-names: Christos
